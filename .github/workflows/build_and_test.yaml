@@ -19,4 +19,6 @@ jobs:
         ruby-version: 2.6.8
         bundler-cache: true
     - name: Run
+      env:
+        SLACK_URL: ${{ secrets.SLACK_URL }}
       run: bundle exec fastlane build_and_test
