@@ -74,6 +74,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A529C2C428FEF60600E2FD55 /* Build configuration list for PBXNativeTarget "AvitoInternship2022" */;
 			buildPhases = (
+				A529C2C728FEF70D00E2FD55 /* SwiftLint */,
 				A529C2AC28FEF60500E2FD55 /* Sources */,
 				A529C2AD28FEF60500E2FD55 /* Frameworks */,
 				A529C2AE28FEF60500E2FD55 /* Resources */,
@@ -132,6 +133,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A529C2C728FEF70D00E2FD55 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A529C2AC28FEF60500E2FD55 /* Sources */ = {
