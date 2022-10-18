@@ -52,13 +52,53 @@
 		A529C2B228FEF60500E2FD55 /* AvitoInternship2022 */ = {
 			isa = PBXGroup;
 			children = (
+				A529C2CC28FEF98500E2FD55 /* Services */,
+				A529C2CB28FEF97B00E2FD55 /* Entities */,
+				A529C2C828FEF96200E2FD55 /* Application */,
+				A529C2C928FEF96A00E2FD55 /* Scenes */,
+				A529C2CA28FEF96F00E2FD55 /* Resources */,
+			);
+			path = AvitoInternship2022;
+			sourceTree = "<group>";
+		};
+		A529C2C828FEF96200E2FD55 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				A529C2B328FEF60500E2FD55 /* AppDelegate.swift */,
-				A529C2B728FEF60500E2FD55 /* ViewController.swift */,
-				A529C2BC28FEF60600E2FD55 /* Assets.xcassets */,
 				A529C2BE28FEF60600E2FD55 /* LaunchScreen.storyboard */,
 				A529C2C128FEF60600E2FD55 /* Info.plist */,
 			);
-			path = AvitoInternship2022;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A529C2C928FEF96A00E2FD55 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A529C2B728FEF60500E2FD55 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A529C2CA28FEF96F00E2FD55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A529C2BC28FEF60600E2FD55 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A529C2CB28FEF97B00E2FD55 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A529C2CC28FEF98500E2FD55 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +336,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AvitoInternship2022/Info.plist;
+				INFOPLIST_FILE = AvitoInternship2022/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Employees;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -327,7 +367,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AvitoInternship2022/Info.plist;
+				INFOPLIST_FILE = AvitoInternship2022/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Employees;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
