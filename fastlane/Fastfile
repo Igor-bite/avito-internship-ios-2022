@@ -26,5 +26,20 @@ desc "Build and test"
   end
 
 error do |lane, exception|
-  slack(message: "❌ Failed with exception: `#exception` from the lane `#lane`", success: false)
+  slack(message: "❌ Lane #{lane} FAILED!",
+	success: false,
+	attachment_properties: {
+           fields: [
+               {
+                   title: "Error message",
+                   value: exception.to_s,
+                   short: false
+               },
+		{
+		   title: "Build URL",
+		   value: ENV['BUILD_URL'],
+		   short: false
+		}
+           ]
+       })
 end

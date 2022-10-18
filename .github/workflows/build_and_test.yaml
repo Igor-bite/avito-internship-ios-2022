@@ -1,5 +1,8 @@
 name: Build and Test
 
+env:
+    BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
 on:
   push:
     branches:
