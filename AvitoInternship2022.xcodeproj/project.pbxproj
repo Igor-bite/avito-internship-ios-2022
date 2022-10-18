@@ -44,6 +44,7 @@
 		A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */; };
 		A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */; };
 		A529C32128FF41F900E2FD55 /* EmployeesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */; };
+		A529C32328FF43A700E2FD55 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C32228FF43A700E2FD55 /* CompanyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenViewController.swift; sourceTree = "<group>"; };
 		A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInteractor.swift; sourceTree = "<group>"; };
 		A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenPresenter.swift; sourceTree = "<group>"; };
+		A529C32228FF43A700E2FD55 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		A529C2CB28FEF97B00E2FD55 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A529C32228FF43A700E2FD55 /* CompanyModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				A529C30628FEFFA000E2FD55 /* BaseWireframe.swift in Sources */,
 				A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */,
 				A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */,
+				A529C32328FF43A700E2FD55 /* CompanyModel.swift in Sources */,
 				A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */,
 				A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */,
 				A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */,
