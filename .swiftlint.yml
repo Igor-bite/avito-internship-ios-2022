@@ -1,0 +1,63 @@
+disabled_rules:
+  - vertical_parameter_alignment_on_call
+  - vertical_parameter_alignment
+  - nesting
+  - object_literal
+  - let_var_whitespace
+  - conditional_returns_on_newline
+  - strict_fileprivate
+  - multiline_parameters
+  - opening_brace
+
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - force_unwrapping
+  - first_where
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - nimble_operator
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - switch_case_on_newline
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+included:
+  - AvitoInternship2022
+
+identifier_name:
+  min_length: 2
+  max_length:
+    warning: 40
+    error: 50
+
+line_length: 140
+
+type_body_length:
+  warning: 200
+  error: 400
+
+file_length:
+  warning: 500
+  error: 750
+
+type_name:
+  min_length: 4
+  max_length:
+    warning: 40
+    error: 50
+
+implicitly_unwrapped_optional:
+  severity: error
+
+reporter: "xcode"
