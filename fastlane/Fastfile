@@ -22,4 +22,9 @@ desc "Build and test"
   lane :build_and_test do
     build_for_testing
     run_tests_from_build
+    slack(message: "✅ App was successfully built and tested") 
   end
+
+error do |lane, exception|
+  slack(message: "❌ Failed with exception: `#exception` from the lane `#lane`", success: false)
+end
