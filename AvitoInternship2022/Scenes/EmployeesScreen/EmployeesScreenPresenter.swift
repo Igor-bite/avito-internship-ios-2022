@@ -14,6 +14,12 @@ final class EmployeesScreenPresenter {
     private let interactor: EmployeesScreenInteractorInterface
     private let wireframe: EmployeesScreenWireframeInterface
 
+    private var company: Company? {
+        didSet {
+            view?.reloadData()
+        }
+    }
+
     // MARK: - Lifecycle -
 
     init(
@@ -29,4 +35,30 @@ final class EmployeesScreenPresenter {
 
 // MARK: - Extensions -
 
-extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {}
+extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
+    var title: String? {
+        company?.name
+    }
+
+    var activeSections: [EmployeesScreenSection] {
+        EmployeesScreenSection.allCases
+    }
+
+    func fetchData() {
+        interactor.getCompany { result in
+            switch result {
+            case .success(let company):
+                self.company = company
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)") // TODO: add handling error
+            }
+        }
+    }
+
+    func items(forSection section: EmployeesScreenSection) -> [Company.Employee] {
+        switch section {
+        case .all:
+            return company?.employees ?? []
+        }
+    }
+}
