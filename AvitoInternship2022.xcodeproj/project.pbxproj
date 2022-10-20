@@ -54,6 +54,7 @@
 		A529C3352901AAEC00E2FD55 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C3342901AAEC00E2FD55 /* RequestType.swift */; };
 		A529C3372901AB4B00E2FD55 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C3362901AB4B00E2FD55 /* TargetType.swift */; };
 		A529C33B2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */; };
+		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		A529C3342901AAEC00E2FD55 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		A529C3362901AB4B00E2FD55 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeProtocol.swift; sourceTree = "<group>"; };
+		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +295,7 @@
 				A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */,
 				A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */,
 				A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */,
+				A5E817892901D274009833BF /* EmployeeCell.swift */,
 			);
 			path = EmployeesScreen;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */,
 				A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */,
 				A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */,
+				A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */,
 				A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */,
 				A529C3302901929500E2FD55 /* URLCacheFacade.swift in Sources */,
 				A529C32A2900490800E2FD55 /* CompanyFetcher.swift in Sources */,
