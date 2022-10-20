@@ -45,6 +45,8 @@
 		A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */; };
 		A529C32128FF41F900E2FD55 /* EmployeesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */; };
 		A529C32328FF43A700E2FD55 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C32228FF43A700E2FD55 /* CompanyModel.swift */; };
+		A529C3302901929500E2FD55 /* URLCacheFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C32F2901929500E2FD55 /* URLCacheFacade.swift */; };
+		A529C33B2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInteractor.swift; sourceTree = "<group>"; };
 		A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenPresenter.swift; sourceTree = "<group>"; };
 		A529C32228FF43A700E2FD55 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
+		A529C32F2901929500E2FD55 /* URLCacheFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacade.swift; sourceTree = "<group>"; };
+		A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 		A529C2CC28FEF98500E2FD55 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A529C33C2901B27800E2FD55 /* URLCacheFacade */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -268,6 +273,15 @@
 				A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */,
 			);
 			path = EmployeesScreen;
+			sourceTree = "<group>";
+		};
+		A529C33C2901B27800E2FD55 /* URLCacheFacade */ = {
+			isa = PBXGroup;
+			children = (
+				A529C32F2901929500E2FD55 /* URLCacheFacade.swift */,
+				A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */,
+			);
+			path = URLCacheFacade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,9 +436,11 @@
 				A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */,
 				A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */,
 				A529C32328FF43A700E2FD55 /* CompanyModel.swift in Sources */,
+				A529C33B2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift in Sources */,
 				A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */,
 				A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */,
 				A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */,
+				A529C3302901929500E2FD55 /* URLCacheFacade.swift in Sources */,
 				A529C2B428FEF60500E2FD55 /* AppDelegate.swift in Sources */,
 				A529C30728FEFFA000E2FD55 /* ViewInterface.swift in Sources */,
 				A529C2FE28FEFE3300E2FD55 /* Assets.swift in Sources */,
