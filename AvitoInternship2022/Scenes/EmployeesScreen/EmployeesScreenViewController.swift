@@ -40,6 +40,8 @@ final class EmployeesScreenViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(collectionView)
+        view.backgroundColor = .systemBackground
+
         collectionView.dataSource = dataSource
         let constraints = collectionViewConstraints()
         NSLayoutConstraint.activate(constraints)
@@ -48,10 +50,10 @@ final class EmployeesScreenViewController: UIViewController {
     private func collectionViewConstraints() -> [NSLayoutConstraint] {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return [
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ]
     }
 

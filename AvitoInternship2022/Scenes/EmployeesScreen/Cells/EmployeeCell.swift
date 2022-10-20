@@ -9,14 +9,36 @@ import UIKit
 
 final class EmployeeCell: UICollectionViewCell, Reusable {
     private enum Constants {
-        static let offset = 20.0
+        static let contentViewOffset = 20.0
+        static let innerViewsOffset = 20.0
     }
 
-    private let titleLabel = {
+    private let imageView = {
+        let view = UIImageView()
+        view.image = UIImage(systemName: "person")
+        view.tintColor = .black
+        return view
+    }()
+
+    private let nameLabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .black
         label.font = FontFamily.Lato.bold.font(size: 21)
+        return label
+    }()
+
+    private let phoneImageView = {
+        let view = UIImageView()
+        view.image = UIImage(systemName: "phone")
+        view.tintColor = .black
+        return view
+    }()
+
+    private let phoneNumberLabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = FontFamily.Lato.bold.font(size: 15)
         return label
     }()
 
@@ -36,44 +58,103 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     }
 
     func configure(employee: Company.Employee) {
-        titleLabel.text = employee.name
+        nameLabel.text = employee.name
+        phoneNumberLabel.text = employee.phoneNumber
     }
 
     private func setupViews() {
-        widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - 40).isActive = true
+        widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - Constants.contentViewOffset * 2).isActive = true
+        contentView.addSubview(imageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(phoneImageView)
+        contentView.addSubview(phoneNumberLabel)
 
+        let constraints = constraintsForContentView() +
+        constraintsForImageView() + constraintsForNameLabel() +
+        constraintsForPhoneImageView() + constraintsForPhoneNumberLabel()
+
+        NSLayoutConstraint.activate(constraints)
+    }
+
+    private func constraintsForContentView() -> [NSLayoutConstraint] {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
+        return [
             contentView.leftAnchor.constraint(equalTo: leftAnchor),
             contentView.rightAnchor.constraint(equalTo: rightAnchor),
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-
-        contentView.addSubview(titleLabel)
-
-        setupTitle()
+        ]
     }
 
-    private func setupTitle() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func constraintsForImageView() -> [NSLayoutConstraint] {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor)
-        top.constant = Constants.offset
-        let lead = titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        lead.constant = Constants.offset
-        let trail = titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        trail.constant = -Constants.offset
-        let bottom = titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        bottom.constant = -Constants.offset
+        let top = imageView.topAnchor.constraint(equalTo: contentView.topAnchor)
+        top.constant = Constants.innerViewsOffset
+        let lead = imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+        lead.constant = Constants.innerViewsOffset
 
-        let constraints = [
+        let width = imageView.widthAnchor.constraint(equalToConstant: 30)
+        let height = imageView.heightAnchor.constraint(equalToConstant: 30)
+
+        return [
             top,
+            lead,
+            width,
+            height
+        ]
+    }
+
+    private func constraintsForNameLabel() -> [NSLayoutConstraint] {
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let centerY = nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        let lead = nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor)
+        lead.constant = Constants.innerViewsOffset
+        let trail = nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        trail.constant = -Constants.innerViewsOffset
+
+        return [
+            centerY,
+            lead,
+            trail
+        ]
+    }
+
+    private func constraintsForPhoneImageView() -> [NSLayoutConstraint] {
+        phoneImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let top = phoneImageView.topAnchor.constraint(equalTo: imageView.bottomAnchor)
+        top.constant = Constants.innerViewsOffset
+        let centerX = phoneImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
+
+        let width = phoneImageView.widthAnchor.constraint(equalToConstant: 20)
+        let height = phoneImageView.heightAnchor.constraint(equalToConstant: 20)
+
+        return [
+            top,
+            centerX,
+            width,
+            height
+        ]
+    }
+
+    private func constraintsForPhoneNumberLabel() -> [NSLayoutConstraint] {
+        phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let centerY = phoneNumberLabel.centerYAnchor.constraint(equalTo: phoneImageView.centerYAnchor)
+        let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor)
+        lead.constant = Constants.innerViewsOffset / 2
+        let trail = phoneNumberLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        trail.constant = -Constants.innerViewsOffset
+        let bottom = phoneNumberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        bottom.constant = -Constants.innerViewsOffset
+
+        return [
+            centerY,
             lead,
             trail,
             bottom
         ]
-        NSLayoutConstraint.activate(constraints)
     }
 }
