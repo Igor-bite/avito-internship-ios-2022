@@ -7,8 +7,18 @@
 
 import Foundation
 
-final class EmployeesScreenInteractor {}
+final class EmployeesScreenInteractor {
+    private let companyService: CompanyService
+
+    init(companyService: CompanyService = CompanyFetcher()) {
+        self.companyService = companyService
+    }
+}
 
 // MARK: - Extensions -
 
-extension EmployeesScreenInteractor: EmployeesScreenInteractorInterface {}
+extension EmployeesScreenInteractor: EmployeesScreenInteractorInterface {
+    func getCompany(completion: @escaping (Result<Company, Error>) -> Void) {
+        companyService.getCompany(completion: completion)
+    }
+}

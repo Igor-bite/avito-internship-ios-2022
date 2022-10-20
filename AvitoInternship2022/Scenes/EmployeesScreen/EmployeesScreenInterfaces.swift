@@ -11,4 +11,6 @@ protocol EmployeesScreenViewInterface: ViewInterface {}
 
 protocol EmployeesScreenPresenterInterface: PresenterInterface {}
 
-protocol EmployeesScreenInteractorInterface: InteractorInterface {}
+protocol EmployeesScreenInteractorInterface: InteractorInterface {
+    func getCompany(completion: @escaping (Result<Company, Error>) -> Void)
+}
