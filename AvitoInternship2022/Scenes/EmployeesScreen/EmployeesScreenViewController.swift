@@ -91,6 +91,8 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
             snapshot.appendItems(presenter.items(forSection: section), toSection: section)
         }
 
-        dataSource.apply(snapshot, animatingDifferences: true)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
 }
