@@ -57,6 +57,7 @@
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
+		A5E817912901E4DC009833BF /* EmployeesScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
+		A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				A529C31728FF41F800E2FD55 /* EmployeesScreen */,
+				A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -295,7 +298,7 @@
 				A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */,
 				A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */,
 				A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */,
-				A5E817892901D274009833BF /* EmployeeCell.swift */,
+				A5E817922901E4E7009833BF /* Cells */,
 			);
 			path = EmployeesScreen;
 			sourceTree = "<group>";
@@ -336,6 +339,14 @@
 				A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A5E817922901E4E7009833BF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5E817892901D274009833BF /* EmployeeCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +501,7 @@
 				A529C32528FF45D300E2FD55 /* CompanyService.swift in Sources */,
 				A529C30628FEFFA000E2FD55 /* BaseWireframe.swift in Sources */,
 				A529C3372901AB4B00E2FD55 /* TargetType.swift in Sources */,
+				A5E817912901E4DC009833BF /* EmployeesScreenSection.swift in Sources */,
 				A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */,
 				A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */,
 				A529C32328FF43A700E2FD55 /* CompanyModel.swift in Sources */,
