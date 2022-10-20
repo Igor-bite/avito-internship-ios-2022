@@ -40,7 +40,7 @@ final class EmployeesScreenViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(collectionView)
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .Pallette.ElementColors.mainBgColor
 
         collectionView.dataSource = dataSource
         let constraints = collectionViewConstraints()

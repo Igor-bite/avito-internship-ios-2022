@@ -11,42 +11,50 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     private enum Constants {
         static let contentViewOffset = 20.0
         static let innerViewsOffset = 20.0
+        static let cornerRadius = 5.0
+
+        enum Icon {
+            static let employeeImageName = "person.circle"
+            static let phoneImageName = "phone.circle"
+            static let bigSizeSide = 30.0
+            static let smallSizeSide = 20.0
+        }
     }
 
     private let imageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "person")
-        view.tintColor = .black
+        view.image = UIImage(systemName: Constants.Icon.employeeImageName)
+        view.tintColor = .Pallette.ElementColors.iconColor
         return view
     }()
 
     private let nameLabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textColor = .black
-        label.font = FontFamily.Lato.bold.font(size: 21)
+        label.textColor = .Pallette.ElementColors.textColor
+        label.font = FontFamily.Lato.bold.font(size: 25)
         return label
     }()
 
     private let phoneImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "phone")
-        view.tintColor = .black
+        view.image = UIImage(systemName: Constants.Icon.phoneImageName)
+        view.tintColor = .Pallette.ElementColors.iconColor
         return view
     }()
 
     private let phoneNumberLabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = FontFamily.Lato.bold.font(size: 15)
+        label.textColor = .Pallette.ElementColors.textColor
+        label.font = FontFamily.Lato.regular.font(size: 15)
         return label
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .lightGray.withAlphaComponent(0.6)
-        layer.cornerRadius = 5
+        backgroundColor = .Pallette.ElementColors.cellBgColor
+        layer.cornerRadius = Constants.cornerRadius
         clipsToBounds = true
 
         setupViews()
@@ -94,8 +102,8 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         let lead = imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         lead.constant = Constants.innerViewsOffset
 
-        let width = imageView.widthAnchor.constraint(equalToConstant: 30)
-        let height = imageView.heightAnchor.constraint(equalToConstant: 30)
+        let width = imageView.widthAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
+        let height = imageView.heightAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
 
         return [
             top,
@@ -110,7 +118,7 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
 
         let centerY = nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
         let lead = nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor)
-        lead.constant = Constants.innerViewsOffset
+        lead.constant = Constants.innerViewsOffset / 2
         let trail = nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         trail.constant = -Constants.innerViewsOffset
 
@@ -125,11 +133,11 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         phoneImageView.translatesAutoresizingMaskIntoConstraints = false
 
         let top = phoneImageView.topAnchor.constraint(equalTo: imageView.bottomAnchor)
-        top.constant = Constants.innerViewsOffset
+        top.constant = Constants.innerViewsOffset / 2
         let centerX = phoneImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
 
-        let width = phoneImageView.widthAnchor.constraint(equalToConstant: 20)
-        let height = phoneImageView.heightAnchor.constraint(equalToConstant: 20)
+        let width = phoneImageView.widthAnchor.constraint(equalToConstant: Constants.Icon.smallSizeSide)
+        let height = phoneImageView.heightAnchor.constraint(equalToConstant: Constants.Icon.smallSizeSide)
 
         return [
             top,
@@ -143,8 +151,7 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let centerY = phoneNumberLabel.centerYAnchor.constraint(equalTo: phoneImageView.centerYAnchor)
-        let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor)
-        lead.constant = Constants.innerViewsOffset / 2
+        let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         let trail = phoneNumberLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         trail.constant = -Constants.innerViewsOffset
         let bottom = phoneNumberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)

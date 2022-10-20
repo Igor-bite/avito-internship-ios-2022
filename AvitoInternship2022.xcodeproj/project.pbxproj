@@ -58,6 +58,7 @@
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
 		A5E817912901E4DC009833BF /* EmployeesScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */; };
+		A5E817952901F23B009833BF /* UIColor + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817942901F23B009833BF /* UIColor + extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
 		A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenSection.swift; sourceTree = "<group>"; };
+		A5E817942901F23B009833BF /* UIColor + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				A529C31728FF41F800E2FD55 /* EmployeesScreen */,
-				A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -293,6 +294,7 @@
 		A529C31728FF41F800E2FD55 /* EmployeesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */,
 				A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */,
 				A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */,
 				A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */,
@@ -337,6 +339,7 @@
 			children = (
 				A5E8178C2901D2C8009833BF /* Reusable.swift */,
 				A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */,
+				A5E817942901F23B009833BF /* UIColor + extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				A529C32528FF45D300E2FD55 /* CompanyService.swift in Sources */,
 				A529C30628FEFFA000E2FD55 /* BaseWireframe.swift in Sources */,
 				A529C3372901AB4B00E2FD55 /* TargetType.swift in Sources */,
+				A5E817952901F23B009833BF /* UIColor + extensions.swift in Sources */,
 				A5E817912901E4DC009833BF /* EmployeesScreenSection.swift in Sources */,
 				A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */,
 				A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */,
