@@ -37,7 +37,7 @@ final class EmployeesScreenPresenter {
 
 extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     var title: String? {
-        company?.name
+        "Employees"
     }
 
     var activeSections: [EmployeesScreenSection] {
