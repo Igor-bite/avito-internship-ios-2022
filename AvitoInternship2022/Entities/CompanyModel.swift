@@ -8,7 +8,7 @@
 import Foundation
 
 struct Company: Codable {
-    struct Employee: Codable {
+    struct Employee: Codable, Hashable {
         let name: String
         let phoneNumber: String
         let skills: [String]

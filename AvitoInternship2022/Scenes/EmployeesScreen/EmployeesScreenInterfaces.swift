@@ -7,9 +7,17 @@
 
 protocol EmployeesScreenWireframeInterface: WireframeInterface {}
 
-protocol EmployeesScreenViewInterface: ViewInterface {}
+protocol EmployeesScreenViewInterface: ViewInterface {
+    func reloadData()
+}
 
-protocol EmployeesScreenPresenterInterface: PresenterInterface {}
+protocol EmployeesScreenPresenterInterface: PresenterInterface {
+    var title: String? { get }
+    var activeSections: [EmployeesScreenSection] { get }
+
+    func fetchData()
+    func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
+}
 
 protocol EmployeesScreenInteractorInterface: InteractorInterface {
     func getCompany(completion: @escaping (Result<Company, Error>) -> Void)
