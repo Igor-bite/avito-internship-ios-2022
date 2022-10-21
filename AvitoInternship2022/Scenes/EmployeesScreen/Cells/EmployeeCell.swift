@@ -14,16 +14,16 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         static let cornerRadius = 5.0
 
         enum Icon {
-            static let employeeImageName = "person.circle"
             static let phoneImageName = "phone.circle"
-            static let bigSizeSide = 30.0
+            static let bigSizeSide = 50.0
             static let smallSizeSide = 20.0
         }
     }
 
-    private let imageView = {
+    private let avatarImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: Constants.Icon.employeeImageName)
+        view.layer.cornerRadius = Constants.Icon.bigSizeSide / 2
+        view.clipsToBounds = true
         view.tintColor = .Pallette.ElementColors.iconColor
         return view
     }()
@@ -68,11 +68,13 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     func configure(employee: Company.Employee) {
         nameLabel.text = employee.name
         phoneNumberLabel.text = employee.phoneNumber
+        let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
+        avatarImageView.image = UserAvatarGenerator.generateUserImage(userName: employee.name, withSize: avatarSize)
     }
 
     private func setupViews() {
         widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - Constants.contentViewOffset * 2).isActive = true
-        contentView.addSubview(imageView)
+        contentView.addSubview(avatarImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(phoneImageView)
         contentView.addSubview(phoneNumberLabel)
@@ -95,19 +97,18 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     }
 
     private func constraintsForImageView() -> [NSLayoutConstraint] {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = imageView.topAnchor.constraint(equalTo: contentView.topAnchor)
-        top.constant = Constants.innerViewsOffset
-        let lead = imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        lead.constant = Constants.innerViewsOffset
+        let top = avatarImageView.topAnchor.constraint(equalTo: nameLabel.topAnchor)
+        let trail = avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        trail.constant = -Constants.innerViewsOffset
 
-        let width = imageView.widthAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
-        let height = imageView.heightAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
+        let width = avatarImageView.widthAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
+        let height = avatarImageView.heightAnchor.constraint(equalToConstant: Constants.Icon.bigSizeSide)
 
         return [
             top,
-            lead,
+            trail,
             width,
             height
         ]
@@ -116,32 +117,33 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     private func constraintsForNameLabel() -> [NSLayoutConstraint] {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        let centerY = nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
-        let lead = nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor)
-        lead.constant = Constants.innerViewsOffset / 2
-        let trail = nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        trail.constant = -Constants.innerViewsOffset
+        let top = nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor)
+        top.constant = Constants.innerViewsOffset
+        let trail = nameLabel.trailingAnchor.constraint(equalTo: avatarImageView.leadingAnchor)
+        trail.constant = -Constants.innerViewsOffset / 2
+        let lead = nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+        lead.constant = Constants.innerViewsOffset
 
         return [
-            centerY,
-            lead,
-            trail
+            top,
+            trail,
+            lead
         ]
     }
 
     private func constraintsForPhoneImageView() -> [NSLayoutConstraint] {
         phoneImageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = phoneImageView.topAnchor.constraint(equalTo: imageView.bottomAnchor)
+        let top = phoneImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor)
         top.constant = Constants.innerViewsOffset / 2
-        let centerX = phoneImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
+        let lead = phoneImageView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
 
         let width = phoneImageView.widthAnchor.constraint(equalToConstant: Constants.Icon.smallSizeSide)
         let height = phoneImageView.heightAnchor.constraint(equalToConstant: Constants.Icon.smallSizeSide)
 
         return [
             top,
-            centerX,
+            lead,
             width,
             height
         ]
@@ -151,17 +153,17 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let centerY = phoneNumberLabel.centerYAnchor.constraint(equalTo: phoneImageView.centerYAnchor)
-        let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
-        let trail = phoneNumberLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        trail.constant = -Constants.innerViewsOffset
+        let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor)
+        lead.constant = Constants.innerViewsOffset / 2
         let bottom = phoneNumberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         bottom.constant = -Constants.innerViewsOffset
+        let trail = phoneNumberLabel.trailingAnchor.constraint(lessThanOrEqualTo: avatarImageView.leadingAnchor)
 
         return [
             centerY,
             lead,
-            trail,
-            bottom
+            bottom,
+            trail
         ]
     }
 }
