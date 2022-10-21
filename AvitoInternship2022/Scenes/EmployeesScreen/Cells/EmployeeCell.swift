@@ -18,6 +18,15 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
             static let bigSizeSide = 50.0
             static let smallSizeSide = 20.0
         }
+
+        enum Tags {
+            static let backgroundColor = UIColor.Pallette.blueColor
+            static let tagHeight = 30.0
+            static let padding = 16.0
+            static let font = FontFamily.Lato.semiBold.font(size: 17)
+            static let spacing = 8.0
+            static let cornerRadius = 12.0
+        }
     }
 
     private let avatarImageView = {
@@ -50,6 +59,21 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         return label
     }()
 
+    private let skillsListView = {
+        let view = TagsListView(frame: .zero)
+        view.backgroundColor = .clear
+        view.tagBackgroundColor = Constants.Tags.backgroundColor
+        view.font = Constants.Tags.font
+        view.tagHeight = Constants.Tags.tagHeight
+        view.tagSpacingX = Constants.Tags.spacing
+        view.tagSpacingY = Constants.Tags.spacing
+        view.tagPadding = Constants.Tags.padding
+        view.cornerRadius = Constants.Tags.cornerRadius
+        return view
+    }()
+
+    private var skillsHeightConstraint: NSLayoutConstraint?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -70,6 +94,11 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         phoneNumberLabel.text = employee.phoneNumber
         let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
         avatarImageView.image = UserAvatarGenerator.generateUserImage(userName: employee.name, withSize: avatarSize)
+        skillsListView.tagNames = employee.skills
+        skillsHeightConstraint?.constant = skillsListView.preferredHeight(
+            forWidth: UIScreen.main.bounds.size.width - Constants.contentViewOffset * 2 - Constants.innerViewsOffset * 2
+        )
+        setNeedsLayout()
     }
 
     private func setupViews() {
@@ -78,10 +107,12 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         contentView.addSubview(nameLabel)
         contentView.addSubview(phoneImageView)
         contentView.addSubview(phoneNumberLabel)
+        contentView.addSubview(skillsListView)
 
         let constraints = constraintsForContentView() +
         constraintsForImageView() + constraintsForNameLabel() +
-        constraintsForPhoneImageView() + constraintsForPhoneNumberLabel()
+        constraintsForPhoneImageView() + constraintsForPhoneNumberLabel() +
+        constraintsForSkillsCollection()
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -89,8 +120,8 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     private func constraintsForContentView() -> [NSLayoutConstraint] {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return [
-            contentView.leftAnchor.constraint(equalTo: leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: rightAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ]
@@ -155,15 +186,36 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         let centerY = phoneNumberLabel.centerYAnchor.constraint(equalTo: phoneImageView.centerYAnchor)
         let lead = phoneNumberLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor)
         lead.constant = Constants.innerViewsOffset / 2
-        let bottom = phoneNumberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        bottom.constant = -Constants.innerViewsOffset
         let trail = phoneNumberLabel.trailingAnchor.constraint(lessThanOrEqualTo: avatarImageView.leadingAnchor)
 
         return [
             centerY,
             lead,
-            bottom,
             trail
+        ]
+    }
+
+    private func constraintsForSkillsCollection() -> [NSLayoutConstraint] {
+        skillsListView.translatesAutoresizingMaskIntoConstraints = false
+
+        let top = skillsListView.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor,
+                                                      constant: Constants.innerViewsOffset)
+        let lead = skillsListView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                           constant: Constants.innerViewsOffset)
+        let trail = skillsListView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                             constant: -Constants.innerViewsOffset)
+        let bottom = skillsListView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                                            constant: -Constants.innerViewsOffset)
+
+        let height = skillsListView.heightAnchor.constraint(equalToConstant: 10)
+        skillsHeightConstraint = height
+
+        return [
+            top,
+            bottom,
+            lead,
+            trail,
+            height
         ]
     }
 }
