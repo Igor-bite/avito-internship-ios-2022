@@ -338,9 +338,19 @@
 			path = URLCacheFacade;
 			sourceTree = "<group>";
 		};
+		A565FD222902E97700CDDABD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5E817A02902CEE1009833BF /* TagsListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A5E8178B2901D2BC009833BF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A565FD222902E97700CDDABD /* Views */,
+				A5E8179A29028163009833BF /* UserAvatarGenerator.swift */,
 				A5E8178C2901D2C8009833BF /* Reusable.swift */,
 				A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */,
 				A5E817942901F23B009833BF /* UIColor + extensions.swift */,
@@ -352,8 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				A5E817892901D274009833BF /* EmployeeCell.swift */,
-				A5E8179A29028163009833BF /* UserAvatarGenerator.swift */,
-				A5E817A02902CEE1009833BF /* TagsListView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
