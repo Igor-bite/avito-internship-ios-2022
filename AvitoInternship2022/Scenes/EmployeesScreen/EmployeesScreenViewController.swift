@@ -62,13 +62,11 @@ final class EmployeesScreenViewController: UIViewController {
             collectionView: collectionView
         ) { collectionView, indexPath, employee -> UICollectionViewCell? in
 
-            let cell: EmployeeCell? = collectionView.dequeueReusableCell(for: indexPath)
-            if let cell = cell {
-                cell.configure(employee: employee)
-                return cell
-            }
+            guard let cell: EmployeeCell = collectionView.dequeueReusableCell(for: indexPath)
+            else { return nil }
 
-            return .init()
+            cell.configure(employee: employee)
+            return cell
         }
 
         return dataSource
@@ -92,7 +90,7 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
         }
 
         DispatchQueue.main.async {
-            self.dataSource.apply(snapshot, animatingDifferences: true)
+            self.dataSource.apply(snapshot)
         }
     }
 }
