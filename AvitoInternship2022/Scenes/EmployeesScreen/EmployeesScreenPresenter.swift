@@ -13,6 +13,7 @@ final class EmployeesScreenPresenter {
     private weak var view: EmployeesScreenViewInterface?
     private let interactor: EmployeesScreenInteractorInterface
     private let wireframe: EmployeesScreenWireframeInterface
+    private let networkMonitor = NetworkMonitor.shared
 
     private var company: Company? {
         didSet {
@@ -36,6 +37,24 @@ final class EmployeesScreenPresenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+
+        NotificationCenter.default.addObserver(self, selector: #selector(connectivityStatusChanged), name: .connectivityStatus, object: nil)
+    }
+
+    @objc
+    private func connectivityStatusChanged() {
+        let isConnected = networkMonitor.isConnected
+        view?.updateNoInternetIconVisibility(isHidden: isConnected)
+        if isConnected {
+            fetchData()
+        } else {
+            HapticFeedbackGenerator.generate(.warning)
+        }
+    }
+
+    private func showAlert(withTitle title: String, message: String?) {
+        HapticFeedbackGenerator.generate(.warning)
+        view?.showAlert(withTitle: title, message: message)
     }
 }
 
@@ -56,7 +75,7 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
             case .success(let company):
                 self?.company = company
             case .failure(let error):
-                self?.view?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription)
+                self?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription)
                 print("Error: \(error.localizedDescription)") // TODO: add handling error
             }
             self?.view?.updateNoDataViewVisibility(isHidden: !(self?.sortedEmployees?.isEmpty ?? true))
@@ -79,6 +98,6 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     }
 
     func noInternetIconTapped() {
-        view?.showAlert(withTitle: "No Internet connection", message: "Showing cached data")
+        showAlert(withTitle: "No Internet connection", message: "Showing cached data")
     }
 }
