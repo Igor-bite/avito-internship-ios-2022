@@ -67,4 +67,11 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
             return sortedEmployees ?? []
         }
     }
+
+    func headerTitle(forSection section: EmployeesScreenSection) -> String? {
+        switch section {
+        case .all:
+            return company?.name
+        }
+    }
 }

@@ -17,6 +17,7 @@ extension UIColor {
             static let mainBgColor = UIColor.systemBackground
             static let cellBgColor = grayColor
             static let textColor = UIColor.systemBackground.themeInverted
+            static let secondaryTextColor = UIColor(light: .gray, dark: .lightGray)
             static let iconColor = blueColor
         }
     }

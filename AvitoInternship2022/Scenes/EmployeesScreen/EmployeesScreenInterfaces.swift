@@ -17,6 +17,7 @@ protocol EmployeesScreenPresenterInterface: PresenterInterface {
 
     func fetchData()
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
+    func headerTitle(forSection section: EmployeesScreenSection) -> String?
 }
 
 protocol EmployeesScreenInteractorInterface: InteractorInterface {

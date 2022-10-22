@@ -10,6 +10,8 @@ import UIKit
 final class EmployeesScreenViewController: UIViewController {
     private enum Constants {
         static let offset = 20.0
+        static let interGroupSpacing = offset / 2
+        static let interItemSpacing = offset / 2
         static let titleFont = FontFamily.Lato.semiBold.font(size: 30.0)
     }
 
@@ -30,13 +32,43 @@ final class EmployeesScreenViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
 
     private lazy var collectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .estimated(300),
+            heightDimension: .estimated(50)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(50)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        group.interItemSpacing = .fixed(Constants.interItemSpacing)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: Constants.offset, leading: Constants.offset,
+                                                        bottom: Constants.offset, trailing: Constants.offset)
+        section.interGroupSpacing = Constants.interGroupSpacing
+
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(40)
+        )
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        sectionHeader.pinToVisibleBounds = true
+        section.boundarySupplementaryItems = [sectionHeader]
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(cellType: EmployeeCell.self)
+        collectionView.register(supplementaryViewType: EmployeesSectionHeaderView.self,
+                                ofKind: UICollectionView.elementKindSectionHeader)
         collectionView.allowsSelection = false
-        collectionView.contentInset = .init(top: 0, left: 0, bottom: Constants.offset, right: 0)
 
         return collectionView
     }()
@@ -85,7 +117,7 @@ final class EmployeesScreenViewController: UIViewController {
     private func makeDataSource() -> UICollectionViewDiffableDataSource<EmployeesScreenSection, Company.Employee> {
         let dataSource = UICollectionViewDiffableDataSource<EmployeesScreenSection, Company.Employee>(
             collectionView: collectionView
-        ) { collectionView, indexPath, employee -> UICollectionViewCell? in
+        ) { collectionView, indexPath, employee in
 
             guard let cell: EmployeeCell = collectionView.dequeueReusableCell(for: indexPath)
             else { return nil }
@@ -93,8 +125,23 @@ final class EmployeesScreenViewController: UIViewController {
             cell.configure(employee: employee)
             return cell
         }
-
+        dataSource.supplementaryViewProvider = { [weak self] collection, kind, indexPath in
+            self?.supplementary(collectionView: collection, kind: kind, indexPath: indexPath)
+        }
         return dataSource
+    }
+
+    private func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+        guard
+            let sectionHeader: EmployeesSectionHeaderView =
+                collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
+        else {
+            assertionFailure("Could not dequeue sectionHeader")
+            return nil
+        }
+        let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
+        sectionHeader.configure(withTitle: presenter?.headerTitle(forSection: section))
+        return sectionHeader
     }
 }
 
