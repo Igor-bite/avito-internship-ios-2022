@@ -32,39 +32,7 @@ final class EmployeesScreenViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
 
     private lazy var collectionView = {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .estimated(300),
-            heightDimension: .estimated(50)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(50)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
-        group.interItemSpacing = .fixed(Constants.interItemSpacing)
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: Constants.offset, leading: Constants.offset,
-                                                        bottom: Constants.offset, trailing: Constants.offset)
-        section.interGroupSpacing = Constants.interGroupSpacing
-
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
-        )
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-        sectionHeader.pinToVisibleBounds = true
-        section.boundarySupplementaryItems = [sectionHeader]
-
-        let layout = UICollectionViewCompositionalLayout(section: section)
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         collectionView.register(cellType: EmployeeCell.self)
         collectionView.register(supplementaryViewType: EmployeesSectionHeaderView.self,
                                 ofKind: UICollectionView.elementKindSectionHeader)
@@ -142,6 +110,49 @@ final class EmployeesScreenViewController: UIViewController {
         let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
         sectionHeader.configure(withTitle: presenter?.headerTitle(forSection: section))
         return sectionHeader
+    }
+
+    private func createCollectionViewLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { _, layoutEnvironment in
+            let itemSize = NSCollectionLayoutSize(
+                widthDimension: .estimated(300),
+                heightDimension: .estimated(50)
+            )
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+            let groupSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(50)
+            )
+            let columns = self.collectionViewColumnCount(for: layoutEnvironment.container.effectiveContentSize.width)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
+            group.interItemSpacing = .fixed(Constants.interItemSpacing)
+
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: Constants.offset,
+                                                            bottom: Constants.offset, trailing: Constants.offset)
+            section.interGroupSpacing = Constants.interGroupSpacing
+
+            let headerSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .absolute(40)
+            )
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top
+            )
+            sectionHeader.pinToVisibleBounds = true
+            section.boundarySupplementaryItems = [sectionHeader]
+
+            return section
+        }
+        return layout
+    }
+
+    private func collectionViewColumnCount(for width: CGFloat) -> Int {
+        let optimalWidth = 250
+        return Int(width) / optimalWidth
     }
 }
 

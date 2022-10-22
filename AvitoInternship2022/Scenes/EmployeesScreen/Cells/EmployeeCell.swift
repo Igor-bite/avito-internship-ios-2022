@@ -95,14 +95,11 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
         avatarImageView.image = UserAvatarGenerator.generateUserImage(userName: employee.name, withSize: avatarSize)
         skillsListView.tagNames = employee.skills
-        skillsHeightConstraint?.constant = skillsListView.preferredHeight(
-            forWidth: UIScreen.main.bounds.size.width - Constants.contentViewOffset * 2 - Constants.innerViewsOffset * 2
-        )
+        skillsHeightConstraint?.constant = skillsListView.preferredHeight(forWidth: frame.width - Constants.contentViewOffset * 2)
         setNeedsLayout()
     }
 
     private func setupViews() {
-        widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width - Constants.contentViewOffset * 2).isActive = true
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(phoneImageView)
@@ -208,6 +205,7 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
                                                             constant: -Constants.innerViewsOffset)
 
         let height = skillsListView.heightAnchor.constraint(equalToConstant: 10)
+        height.priority = .defaultHigh
         skillsHeightConstraint = height
 
         return [

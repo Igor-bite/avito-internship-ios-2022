@@ -44,7 +44,7 @@ final class EmployeesSectionHeaderView: UICollectionReusableView, Reusable {
     private func constraintsForTitleLabel() -> [NSLayoutConstraint] {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return [
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.offset),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.offset),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.offset),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.offset)
