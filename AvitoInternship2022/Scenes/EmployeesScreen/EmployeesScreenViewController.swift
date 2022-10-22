@@ -9,7 +9,7 @@ import UIKit
 
 final class EmployeesScreenViewController: UIViewController {
     private enum Constants {
-        static let offset = 20.0
+        static let offset = 15.0
         static let interGroupSpacing = offset / 2
         static let interItemSpacing = offset / 2
         static let titleFont = FontFamily.Lato.semiBold.font(size: 30.0)
@@ -151,7 +151,7 @@ final class EmployeesScreenViewController: UIViewController {
     }
 
     private func collectionViewColumnCount(for width: CGFloat) -> Int {
-        let optimalWidth = 250
+        let optimalWidth = 280
         return Int(width) / optimalWidth
     }
 }

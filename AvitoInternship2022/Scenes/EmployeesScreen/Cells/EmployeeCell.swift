@@ -9,8 +9,8 @@ import UIKit
 
 final class EmployeeCell: UICollectionViewCell, Reusable {
     private enum Constants {
-        static let contentViewOffset = 20.0
-        static let innerViewsOffset = 20.0
+        static let contentViewOffset = 15.0
+        static let innerViewsOffset = 15.0
         static let cornerRadius = 5.0
 
         enum Icon {
@@ -95,7 +95,7 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
         avatarImageView.image = UserAvatarGenerator.generateUserImage(userName: employee.name, withSize: avatarSize)
         skillsListView.tagNames = employee.skills
-        skillsHeightConstraint?.constant = skillsListView.preferredHeight(forWidth: frame.width - Constants.contentViewOffset * 2)
+        skillsHeightConstraint?.constant = skillsListView.preferredHeight(forWidth: frame.width - Constants.innerViewsOffset * 4)
         setNeedsLayout()
     }
 
@@ -203,9 +203,9 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
                                                              constant: -Constants.innerViewsOffset)
         let bottom = skillsListView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
                                                             constant: -Constants.innerViewsOffset)
+        bottom.priority = .defaultHigh
 
         let height = skillsListView.heightAnchor.constraint(equalToConstant: 10)
-        height.priority = .defaultHigh
         skillsHeightConstraint = height
 
         return [
