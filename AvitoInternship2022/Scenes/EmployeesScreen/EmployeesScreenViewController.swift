@@ -253,9 +253,9 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
     }
 
     func showAlert(withTitle title: String, message: String?, completion: (() -> Void)?) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
         DispatchQueue.main.async { [weak self] in
+            let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default))
             self?.present(alertVC, animated: true, completion: completion)
         }
     }
