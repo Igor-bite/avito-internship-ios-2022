@@ -51,14 +51,15 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     }
 
     func fetchData() {
-        interactor.getCompany { result in
+        interactor.getCompany { [weak self] result in
             switch result {
             case .success(let company):
-                self.company = company
+                self?.company = company
             case .failure(let error):
+                self?.view?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription)
                 print("Error: \(error.localizedDescription)") // TODO: add handling error
             }
-            self.view?.updateNoDataViewVisibility(isHidden: !(self.sortedEmployees?.isEmpty ?? true))
+            self?.view?.updateNoDataViewVisibility(isHidden: !(self?.sortedEmployees?.isEmpty ?? true))
         }
     }
 
@@ -72,7 +73,8 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     func headerTitle(forSection section: EmployeesScreenSection) -> String? {
         switch section {
         case .all:
-            return company?.name
+            let hasNoData = sortedEmployees?.isEmpty ?? true
+            return hasNoData ? nil : company?.name
         }
     }
 
