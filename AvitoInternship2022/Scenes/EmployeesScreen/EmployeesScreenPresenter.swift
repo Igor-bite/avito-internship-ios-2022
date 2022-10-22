@@ -45,6 +45,8 @@ final class EmployeesScreenPresenter {
 
     @objc
     private func connectivityStatusChanged() {
+        let info = networkMonitor.isConnected ? "connected" : "disconnected"
+        DebugLogger.log(type: .info, message: "Internet is " + info)
         view?.updateNoInternetIconVisibility()
         HapticFeedbackGenerator.generate(networkMonitor.isConnected ? .success : .warning)
     }
@@ -75,7 +77,6 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
             showAlert(withTitle: "No Internet connection", message: "Please check your connection and try again") {
                 self.view?.updateLoadingIndicator(isLoading: false)
             }
-            view?.updateNoDataViewVisibility(isHidden: !(sortedEmployees?.isEmpty ?? true))
             return
         }
 
@@ -88,8 +89,9 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
                 self?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription) {
                     self?.view?.updateLoadingIndicator(isLoading: false)
                 }
-                print("Error: \(error.localizedDescription)") // TODO: add handling error
+                DebugLogger.log(type: .error, message: "Error: \(error.localizedDescription)")
             }
+            self?.view?.updateNoDataViewVisibility(isHidden: !(self?.sortedEmployees?.isEmpty ?? true))
         }
     }
 
