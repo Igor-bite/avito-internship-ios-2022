@@ -15,6 +15,9 @@ final class EmployeesScreenViewController: UIViewController {
         static let titleFont = FontFamily.Lato.semiBold.font(size: 30.0)
     }
 
+    typealias Snapshot = NSDiffableDataSourceSnapshot<EmployeesScreenSection, Company.Employee>
+    typealias DataSource = UICollectionViewDiffableDataSource<EmployeesScreenSection, Company.Employee>
+
     // MARK: - Public properties -
 
     var presenter: EmployeesScreenPresenterInterface?
@@ -29,7 +32,7 @@ final class EmployeesScreenViewController: UIViewController {
         return label
     }()
 
-    private lazy var dataSource = makeDataSource()
+    private lazy var dataSource = createDataSource()
 
     private lazy var collectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
@@ -82,29 +85,28 @@ final class EmployeesScreenViewController: UIViewController {
         ]
     }
 
-    private func makeDataSource() -> UICollectionViewDiffableDataSource<EmployeesScreenSection, Company.Employee> {
-        let dataSource = UICollectionViewDiffableDataSource<EmployeesScreenSection, Company.Employee>(
-            collectionView: collectionView
-        ) { collectionView, indexPath, employee in
-
-            guard let cell: EmployeeCell = collectionView.dequeueReusableCell(for: indexPath)
-            else { return nil }
-
-            cell.configure(employee: employee)
-            return cell
+    private func createDataSource() -> DataSource {
+        let dataSource = DataSource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
+            self?.cell(collectionView: collectionView, indexPath: indexPath, item: item)
         }
+
         dataSource.supplementaryViewProvider = { [weak self] collection, kind, indexPath in
             self?.supplementary(collectionView: collection, kind: kind, indexPath: indexPath)
         }
         return dataSource
     }
 
+    private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Company.Employee) -> UICollectionViewCell? {
+        guard let cell: EmployeeCell = collectionView.dequeueReusableCell(for: indexPath) else { return nil }
+        cell.configure(employee: item)
+        return cell
+    }
+
     private func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         guard
             let sectionHeader: EmployeesSectionHeaderView =
-                collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
+                collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath)
         else {
-            assertionFailure("Could not dequeue sectionHeader")
             return nil
         }
         let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
@@ -165,7 +167,7 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
             assertionFailure("Data source for collection view is missing")
             return
         }
-        var snapshot = NSDiffableDataSourceSnapshot<EmployeesScreenSection, Company.Employee>()
+        var snapshot = Snapshot()
         let activeSections = presenter.activeSections
         snapshot.appendSections(activeSections)
         activeSections.forEach { section in
