@@ -3,6 +3,16 @@
     {
       "filename" : "Logo-Avito.png",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Logo-Avito-Dark-Theme.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
