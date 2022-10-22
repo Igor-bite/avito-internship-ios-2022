@@ -57,6 +57,7 @@
 		A529C3372901AB4B00E2FD55 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C3362901AB4B00E2FD55 /* TargetType.swift */; };
 		A529C33B2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */; };
 		A52AAB9F290482F800DEB5AB /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52AAB9E290482F800DEB5AB /* HapticFeedbackGenerator.swift */; };
+		A594E45C2904AA3500B737D4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594E45B2904AA3500B737D4 /* Logger.swift */; };
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
@@ -130,6 +131,7 @@
 		A529C3362901AB4B00E2FD55 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeProtocol.swift; sourceTree = "<group>"; };
 		A52AAB9E290482F800DEB5AB /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
+		A594E45B2904AA3500B737D4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				A5E817942901F23B009833BF /* UIColor + extensions.swift */,
 				A52074FD2904604A005C42D6 /* NetworkMonitor.swift */,
 				A52AAB9E290482F800DEB5AB /* HapticFeedbackGenerator.swift */,
+				A594E45B2904AA3500B737D4 /* Logger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A594E45C2904AA3500B737D4 /* Logger.swift in Sources */,
 				A529C3322901AA7200E2FD55 /* NetworkService.swift in Sources */,
 				A529C31E28FF41F900E2FD55 /* EmployeesScreenWireframe.swift in Sources */,
 				A529C30028FEFE3A00E2FD55 /* Fonts.swift in Sources */,
