@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CompanyService {
-    func getCompany(completion: @escaping (Result<Company, Error>) -> Void)
+    func getCompany(forceRefresh: Bool, completion: @escaping (Result<Company, Error>) -> Void)
 }

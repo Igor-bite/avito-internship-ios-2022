@@ -23,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = initialController
         window.makeKeyAndVisible()
 
+        startMonitoringInternetConnectivity()
+
         return true
+    }
+
+    private func startMonitoringInternetConnectivity() {
+        NetworkMonitor.shared.startMonitoring()
     }
 }

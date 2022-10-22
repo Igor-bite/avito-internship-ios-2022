@@ -38,7 +38,7 @@ final class EmployeesScreenViewController: UIViewController {
         view.tintColor = .Pallette.ElementColors.warningIconColor
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(noInternetIconTapped)))
-        view.alpha = 0
+        view.alpha = (presenter?.isInternetConnected ?? false) ? 0.0 : 1.0
         return view
     }()
 
@@ -57,6 +57,8 @@ final class EmployeesScreenViewController: UIViewController {
         collectionView.register(supplementaryViewType: EmployeesSectionHeaderView.self,
                                 ofKind: UICollectionView.elementKindSectionHeader)
         collectionView.allowsSelection = false
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
         return collectionView
     }()
@@ -69,7 +71,12 @@ final class EmployeesScreenViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
 
         setupViews()
-        presenter?.fetchData()
+        presenter?.fetchData(forceRefresh: false)
+    }
+
+    @objc
+    private func refresh() {
+        presenter?.fetchData(forceRefresh: true)
     }
 
     @objc
@@ -228,10 +235,11 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
         }
     }
 
-    func updateNoInternetIconVisibility(isHidden: Bool) {
+    func updateNoInternetIconVisibility() {
+        guard let presenter = presenter else { return }
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.4, delay: 0) {
-                self.noInternetIconView.alpha = isHidden ? 0.0 : 1.0
+                self.noInternetIconView.alpha = presenter.isInternetConnected ? 0.0 : 1.0
             }
         }
     }
@@ -244,11 +252,21 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
         }
     }
 
-    func showAlert(withTitle title: String, message: String?) {
+    func showAlert(withTitle title: String, message: String?, completion: (() -> Void)?) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default))
         DispatchQueue.main.async { [weak self] in
-            self?.present(alertVC, animated: true)
+            self?.present(alertVC, animated: true, completion: completion)
+        }
+    }
+
+    func updateLoadingIndicator(isLoading: Bool) {
+        DispatchQueue.main.async {
+            if isLoading {
+                self.collectionView.refreshControl?.beginRefreshing()
+            } else {
+                self.collectionView.refreshControl?.endRefreshing()
+            }
         }
     }
 }
