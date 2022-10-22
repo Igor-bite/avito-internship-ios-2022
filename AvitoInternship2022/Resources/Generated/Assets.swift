@@ -23,6 +23,7 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
     internal static let logoAvito = ImageAsset(name: "Logo-Avito")
+    internal static let noInternet = ImageAsset(name: "no-internet")
 }
 
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
