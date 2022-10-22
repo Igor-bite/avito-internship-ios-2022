@@ -34,11 +34,17 @@ final class EmployeesScreenViewController: UIViewController {
     }()
 
     private lazy var noInternetIconView = {
-        let image = Asset.noInternet.image
-        let view = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
+        let view = UIImageView(image: Asset.noInternet.image.withRenderingMode(.alwaysTemplate))
         view.tintColor = .Pallette.ElementColors.warningIconColor
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(noInternetIconTapped)))
+        view.alpha = 0
+        return view
+    }()
+
+    private let noDataImage = {
+        let view = UIImageView(image: Asset.noData.image)
+        view.contentMode = .scaleAspectFit
         view.alpha = 0
         return view
     }()
@@ -75,10 +81,11 @@ final class EmployeesScreenViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(noInternetIconView)
         view.addSubview(collectionView)
+        view.addSubview(noDataImage)
         view.backgroundColor = .Pallette.ElementColors.mainBgColor
 
         collectionView.dataSource = dataSource
-        let constraints = titleLabelConstraints() + navBarIconConstraints() + collectionViewConstraints()
+        let constraints = titleLabelConstraints() + navBarIconConstraints() + collectionViewConstraints() + noDataImageViewConstraints()
         NSLayoutConstraint.activate(constraints)
     }
 
@@ -87,7 +94,8 @@ final class EmployeesScreenViewController: UIViewController {
         return [
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.offset),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.offset),
-            titleLabel.trailingAnchor.constraint(equalTo: noInternetIconView.leadingAnchor, constant: -Constants.offset)
+            titleLabel.trailingAnchor.constraint(equalTo: noInternetIconView.leadingAnchor, constant: -Constants.offset),
+            titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.titleFont.lineHeight)
         ]
     }
 
@@ -110,6 +118,19 @@ final class EmployeesScreenViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+        ]
+    }
+
+    private func noDataImageViewConstraints() -> [NSLayoutConstraint] {
+        noDataImage.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = view.safeAreaLayoutGuide
+        return [
+            noDataImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            noDataImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataImage.widthAnchor.constraint(lessThanOrEqualToConstant: 500),
+            noDataImage.trailingAnchor.constraint(lessThanOrEqualTo: safeArea.trailingAnchor),
+            noDataImage.leadingAnchor.constraint(greaterThanOrEqualTo: safeArea.leadingAnchor),
+            noDataImage.widthAnchor.constraint(equalTo: noDataImage.heightAnchor)
         ]
     }
 
@@ -208,8 +229,18 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
     }
 
     func updateNoInternetIconVisibility(isHidden: Bool) {
-        UIView.animate(withDuration: 0.4, delay: 0) {
-            self.noInternetIconView.alpha = isHidden ? 0.0 : 1.0
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.4, delay: 0) {
+                self.noInternetIconView.alpha = isHidden ? 0.0 : 1.0
+            }
+        }
+    }
+
+    func updateNoDataViewVisibility(isHidden: Bool) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 0) {
+                self.noDataImage.alpha = isHidden ? 0.0 : 1.0
+            }
         }
     }
 

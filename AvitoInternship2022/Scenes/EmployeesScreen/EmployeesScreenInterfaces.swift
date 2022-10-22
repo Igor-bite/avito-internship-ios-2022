@@ -10,6 +10,7 @@ protocol EmployeesScreenWireframeInterface: WireframeInterface {}
 protocol EmployeesScreenViewInterface: ViewInterface {
     func reloadData()
     func updateNoInternetIconVisibility(isHidden: Bool)
+    func updateNoDataViewVisibility(isHidden: Bool)
     func showAlert(withTitle title: String, message: String?)
 }
 

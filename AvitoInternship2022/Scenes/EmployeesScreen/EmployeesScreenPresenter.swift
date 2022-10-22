@@ -58,6 +58,7 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
             case .failure(let error):
                 print("Error: \(error.localizedDescription)") // TODO: add handling error
             }
+            self.view?.updateNoDataViewVisibility(isHidden: !(self.sortedEmployees?.isEmpty ?? true))
         }
     }
 
