@@ -17,7 +17,9 @@ final class EmployeesScreenPresenter {
 
     private var company: Company? {
         didSet {
-            sortedEmployees = company?.employees.sorted { $0.name < $1.name }
+            if oldValue?.employees != company?.employees {
+                sortedEmployees = company?.employees.sorted { $0.name < $1.name }
+            }
         }
     }
 
@@ -43,19 +45,13 @@ final class EmployeesScreenPresenter {
 
     @objc
     private func connectivityStatusChanged() {
-        let isConnected = networkMonitor.isConnected
-        view?.updateNoInternetIconVisibility(isHidden: isConnected)
-        HapticFeedbackGenerator.generate(isConnected ? .success : .warning)
-        if isConnected {
-            fetchData(forceRefresh: false)
-        } else {
-            HapticFeedbackGenerator.generate(.warning)
-        }
+        view?.updateNoInternetIconVisibility()
+        HapticFeedbackGenerator.generate(networkMonitor.isConnected ? .success : .warning)
     }
 
-    private func showAlert(withTitle title: String, message: String?) {
+    private func showAlert(withTitle title: String, message: String?, completion: (() -> Void)? = nil) {
         HapticFeedbackGenerator.generate(.warning)
-        view?.showAlert(withTitle: title, message: message)
+        view?.showAlert(withTitle: title, message: message, completion: completion)
     }
 }
 
@@ -70,17 +66,30 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
         EmployeesScreenSection.allCases
     }
 
+    var isInternetConnected: Bool {
+        networkMonitor.isConnected
+    }
+
     func fetchData(forceRefresh: Bool) {
-        interactor.getCompany { [weak self] result in
+        if !networkMonitor.isConnected && company != nil {
+            showAlert(withTitle: "No Internet connection", message: "Please check your connection and try again") {
+                self.view?.updateLoadingIndicator(isLoading: false)
+            }
+            view?.updateNoDataViewVisibility(isHidden: !(sortedEmployees?.isEmpty ?? true))
+            return
+        }
+
         interactor.getCompany(forceRefresh: forceRefresh) { [weak self] result in
             switch result {
             case .success(let company):
                 self?.company = company
+                self?.view?.updateLoadingIndicator(isLoading: false)
             case .failure(let error):
-                self?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription)
+                self?.showAlert(withTitle: "Error fetching data", message: error.localizedDescription) {
+                    self?.view?.updateLoadingIndicator(isLoading: false)
+                }
                 print("Error: \(error.localizedDescription)") // TODO: add handling error
             }
-            self?.view?.updateNoDataViewVisibility(isHidden: !(self?.sortedEmployees?.isEmpty ?? true))
         }
     }
 
@@ -100,6 +109,6 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     }
 
     func noInternetIconTapped() {
-        showAlert(withTitle: "No Internet connection", message: "Showing cached data")
+        showAlert(withTitle: "No Internet connection", message: nil)
     }
 }

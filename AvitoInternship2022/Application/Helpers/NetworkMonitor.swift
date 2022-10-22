@@ -26,12 +26,12 @@ final class NetworkMonitor {
 
     func startMonitoring() {
         monitor.pathUpdateHandler = { [weak self] path in
-            guard let self = self else { return }
-            let isConnected = self.isConnected(withPath: path)
-            guard isConnected != self.isConnected else { return }
+            guard let self = self,
+                  self.isConnected(withPath: path) != self.isConnected
+            else { return }
 
+            self.isConnected = self.isConnected(withPath: path)
             NotificationCenter.default.post(name: .connectivityStatus, object: nil)
-            self.isConnected = isConnected
         }
         monitor.start(queue: queue)
     }

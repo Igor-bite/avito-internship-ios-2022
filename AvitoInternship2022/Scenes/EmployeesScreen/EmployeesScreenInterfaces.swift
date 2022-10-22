@@ -9,14 +9,16 @@ protocol EmployeesScreenWireframeInterface: WireframeInterface {}
 
 protocol EmployeesScreenViewInterface: ViewInterface {
     func reloadData()
-    func updateNoInternetIconVisibility(isHidden: Bool)
+    func updateNoInternetIconVisibility()
     func updateNoDataViewVisibility(isHidden: Bool)
-    func showAlert(withTitle title: String, message: String?)
+    func showAlert(withTitle title: String, message: String?, completion: (() -> Void)?)
+    func updateLoadingIndicator(isLoading: Bool)
 }
 
 protocol EmployeesScreenPresenterInterface: PresenterInterface {
     var title: String? { get }
     var activeSections: [EmployeesScreenSection] { get }
+    var isInternetConnected: Bool { get }
 
     func fetchData(forceRefresh: Bool)
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
