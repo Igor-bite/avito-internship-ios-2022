@@ -18,12 +18,12 @@ protocol EmployeesScreenPresenterInterface: PresenterInterface {
     var title: String? { get }
     var activeSections: [EmployeesScreenSection] { get }
 
-    func fetchData()
+    func fetchData(forceRefresh: Bool)
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
     func headerTitle(forSection section: EmployeesScreenSection) -> String?
     func noInternetIconTapped()
 }
 
 protocol EmployeesScreenInteractorInterface: InteractorInterface {
-    func getCompany(completion: @escaping (Result<Company, Error>) -> Void)
+    func getCompany(forceRefresh: Bool, completion: @escaping (Result<Company, Error>) -> Void)
 }

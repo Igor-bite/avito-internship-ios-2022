@@ -69,7 +69,7 @@ final class EmployeesScreenViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
 
         setupViews()
-        presenter?.fetchData()
+        presenter?.fetchData(forceRefresh: false)
     }
 
     @objc

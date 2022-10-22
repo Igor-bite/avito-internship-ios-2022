@@ -45,14 +45,15 @@ final class CompanyFetcher: CompanyService {
         )
     }
 
-    func getCompany(completion: @escaping (Result<Company, Error>) -> Void) {
+    func getCompany(forceRefresh: Bool, completion: @escaping (Result<Company, Error>) -> Void) {
         let requestType = RequestType.company
         guard let request = requestType.urlRequest else {
             completion(.failure(ServiceError.failedCreatingUrlRequest))
             return
         }
 
-        if let cachedData = cache?.data(forRequest: request),
+        if !forceRefresh,
+           let cachedData = cache?.data(forRequest: request),
            let company = decode(data: cachedData)
         {
             completion(.success(company))

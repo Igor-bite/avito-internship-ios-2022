@@ -45,8 +45,9 @@ final class EmployeesScreenPresenter {
     private func connectivityStatusChanged() {
         let isConnected = networkMonitor.isConnected
         view?.updateNoInternetIconVisibility(isHidden: isConnected)
+        HapticFeedbackGenerator.generate(isConnected ? .success : .warning)
         if isConnected {
-            fetchData()
+            fetchData(forceRefresh: false)
         } else {
             HapticFeedbackGenerator.generate(.warning)
         }
@@ -69,8 +70,9 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
         EmployeesScreenSection.allCases
     }
 
-    func fetchData() {
+    func fetchData(forceRefresh: Bool) {
         interactor.getCompany { [weak self] result in
+        interactor.getCompany(forceRefresh: forceRefresh) { [weak self] result in
             switch result {
             case .success(let company):
                 self?.company = company

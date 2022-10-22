@@ -18,7 +18,7 @@ final class EmployeesScreenInteractor {
 // MARK: - Extensions -
 
 extension EmployeesScreenInteractor: EmployeesScreenInteractorInterface {
-    func getCompany(completion: @escaping (Result<Company, Error>) -> Void) {
-        companyService.getCompany(completion: completion)
+    func getCompany(forceRefresh: Bool, completion: @escaping (Result<Company, Error>) -> Void) {
+        companyService.getCompany(forceRefresh: forceRefresh, completion: completion)
     }
 }
