@@ -12,7 +12,8 @@ final class EmployeesScreenViewController: UIViewController {
         static let offset = 15.0
         static let interGroupSpacing = offset / 2
         static let interItemSpacing = offset / 2
-        static let titleFont = FontFamily.Lato.semiBold.font(size: 30.0)
+        static let titleHeight = 30.0
+        static let titleFont = FontFamily.Lato.semiBold.font(size: titleHeight)
     }
 
     typealias Snapshot = NSDiffableDataSourceSnapshot<EmployeesScreenSection, Company.Employee>
@@ -30,6 +31,16 @@ final class EmployeesScreenViewController: UIViewController {
         label.font = Constants.titleFont
         label.textColor = .Pallette.ElementColors.textColor
         return label
+    }()
+
+    private lazy var noInternetIconView = {
+        let image = Asset.noInternet.image
+        let view = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
+        view.tintColor = .Pallette.ElementColors.warningIconColor
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(noInternetIconTapped)))
+        view.alpha = 0
+        return view
     }()
 
     private lazy var dataSource = createDataSource()
@@ -55,13 +66,19 @@ final class EmployeesScreenViewController: UIViewController {
         presenter?.fetchData()
     }
 
+    @objc
+    private func noInternetIconTapped() {
+        presenter?.noInternetIconTapped()
+    }
+
     private func setupViews() {
         view.addSubview(titleLabel)
+        view.addSubview(noInternetIconView)
         view.addSubview(collectionView)
         view.backgroundColor = .Pallette.ElementColors.mainBgColor
 
         collectionView.dataSource = dataSource
-        let constraints = titleLabelConstraints() + collectionViewConstraints()
+        let constraints = titleLabelConstraints() + navBarIconConstraints() + collectionViewConstraints()
         NSLayoutConstraint.activate(constraints)
     }
 
@@ -70,7 +87,18 @@ final class EmployeesScreenViewController: UIViewController {
         return [
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.offset),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.offset),
-            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Constants.offset)
+            titleLabel.trailingAnchor.constraint(equalTo: noInternetIconView.leadingAnchor, constant: -Constants.offset)
+        ]
+    }
+
+    private func navBarIconConstraints() -> [NSLayoutConstraint] {
+        noInternetIconView.translatesAutoresizingMaskIntoConstraints = false
+        return [
+            noInternetIconView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            noInternetIconView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                                                         constant: -Constants.offset),
+            noInternetIconView.widthAnchor.constraint(equalToConstant: Constants.titleHeight),
+            noInternetIconView.heightAnchor.constraint(equalToConstant: Constants.titleHeight)
         ]
     }
 
@@ -177,5 +205,17 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot)
         }
+    }
+
+    func updateNoInternetIconVisibility(isHidden: Bool) {
+        UIView.animate(withDuration: 0.4, delay: 0) {
+            self.noInternetIconView.alpha = isHidden ? 0.0 : 1.0
+        }
+    }
+
+    func showAlert(withTitle title: String, message: String?) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertVC, animated: true)
     }
 }

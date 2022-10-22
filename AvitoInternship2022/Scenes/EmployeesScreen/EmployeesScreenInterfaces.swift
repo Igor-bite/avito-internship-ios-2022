@@ -9,6 +9,8 @@ protocol EmployeesScreenWireframeInterface: WireframeInterface {}
 
 protocol EmployeesScreenViewInterface: ViewInterface {
     func reloadData()
+    func updateNoInternetIconVisibility(isHidden: Bool)
+    func showAlert(withTitle title: String, message: String?)
 }
 
 protocol EmployeesScreenPresenterInterface: PresenterInterface {
@@ -18,6 +20,7 @@ protocol EmployeesScreenPresenterInterface: PresenterInterface {
     func fetchData()
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
     func headerTitle(forSection section: EmployeesScreenSection) -> String?
+    func noInternetIconTapped()
 }
 
 protocol EmployeesScreenInteractorInterface: InteractorInterface {

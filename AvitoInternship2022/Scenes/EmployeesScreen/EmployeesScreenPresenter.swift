@@ -74,4 +74,8 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
             return company?.name
         }
     }
+
+    func noInternetIconTapped() {
+        view?.showAlert(withTitle: "No Internet connection", message: "Showing cached data")
+    }
 }

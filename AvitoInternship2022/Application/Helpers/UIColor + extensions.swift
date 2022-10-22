@@ -12,6 +12,7 @@ extension UIColor {
         static let grayColor = UIColor(light: UIColor(red: 233 / 255, green: 236 / 255, blue: 239 / 255, alpha: 1),
                                        dark: UIColor(red: 33 / 255, green: 37 / 255, blue: 41 / 255, alpha: 1))
         static let blueColor = UIColor(red: 73 / 255, green: 172 / 255, blue: 255 / 255, alpha: 1)
+        static let orangeColor = UIColor.systemOrange
 
         enum ElementColors {
             static let mainBgColor = UIColor.systemBackground
@@ -19,6 +20,7 @@ extension UIColor {
             static let textColor = UIColor.systemBackground.themeInverted
             static let secondaryTextColor = UIColor(light: .gray, dark: .lightGray)
             static let iconColor = blueColor
+            static let warningIconColor = orangeColor
         }
     }
 
