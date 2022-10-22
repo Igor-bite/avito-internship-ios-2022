@@ -7,8 +7,14 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum ServiceError: String, Error {
     case failedCreatingUrlRequest
     case missingData
     case decodingFailure
+}
+
+extension ServiceError: LocalizedError {
+    var errorDescription: String? {
+        rawValue
+    }
 }

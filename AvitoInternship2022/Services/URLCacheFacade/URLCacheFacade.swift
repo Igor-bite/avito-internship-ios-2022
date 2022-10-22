@@ -41,7 +41,6 @@ final class URLCacheFacade: URLCacheFacadeProtocol {
             return nil
         }
         return cacheData(forRequest: request)
-//        return nil
     }
 
     private func cacheData(forRequest request: URLRequest) -> Data? {
