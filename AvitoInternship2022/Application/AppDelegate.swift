@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         let initialController = UINavigationController()
-        initialController.setViewControllers([ViewController()], animated: false)
+        initialController.setRootWireframe(EmployeesScreenWireframe())
 
         window.rootViewController = initialController
         window.makeKeyAndVisible()
