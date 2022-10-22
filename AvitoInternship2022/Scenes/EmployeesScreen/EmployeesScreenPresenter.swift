@@ -16,6 +16,12 @@ final class EmployeesScreenPresenter {
 
     private var company: Company? {
         didSet {
+            sortedEmployees = company?.employees.sorted { $0.name < $1.name }
+        }
+    }
+
+    private var sortedEmployees: [Company.Employee]? {
+        didSet {
             view?.reloadData()
         }
     }
@@ -58,7 +64,7 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee] {
         switch section {
         case .all:
-            return company?.employees ?? []
+            return sortedEmployees ?? []
         }
     }
 }

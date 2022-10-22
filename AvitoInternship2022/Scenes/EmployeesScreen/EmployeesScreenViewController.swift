@@ -36,6 +36,7 @@ final class EmployeesScreenViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(cellType: EmployeeCell.self)
         collectionView.allowsSelection = false
+        collectionView.contentInset = .init(top: 0, left: 0, bottom: Constants.offset, right: 0)
 
         return collectionView
     }()
