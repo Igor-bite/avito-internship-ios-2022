@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FE4C7F416084027A7EA04F4 /* Pods_AvitoInternship2022_AvitoInternship2022UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F1DB9F7F7E669D2379550E /* Pods_AvitoInternship2022_AvitoInternship2022UITests.framework */; };
+		294AEDE0C27FECAE2447252E /* Pods_AvitoInternship2022.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F6B2D5122EDC29BD4F2F38 /* Pods_AvitoInternship2022.framework */; };
+		3096509A839BE6473C621BB3 /* Pods_AvitoInternship2022Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7784453A1D0C2E66EBF1E473 /* Pods_AvitoInternship2022Tests.framework */; };
 		A508DFEE2903FD3E003C7A23 /* EmployeesSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DFED2903FD3E003C7A23 /* EmployeesSectionHeaderView.swift */; };
 		A52074FE2904604A005C42D6 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52074FD2904604A005C42D6 /* NetworkMonitor.swift */; };
 		A529C2B428FEF60500E2FD55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C2B328FEF60500E2FD55 /* AppDelegate.swift */; };
@@ -69,6 +72,8 @@
 		A5C35B052905DBC2000108CB /* CompanyFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */; };
 		A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */; };
 		A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B082905ECB7000108CB /* MockedNetworkService.swift */; };
+		A5C35B282905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */; };
+		A5C35B2F2905F7DE000108CB /* EmployeesScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */; };
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
@@ -86,9 +91,20 @@
 			remoteGlobalIDString = A529C2AF28FEF60500E2FD55;
 			remoteInfo = AvitoInternship2022;
 		};
+		A5C35B292905F6B0000108CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A529C2A828FEF60500E2FD55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A529C2AF28FEF60500E2FD55;
+			remoteInfo = AvitoInternship2022;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DE1B9C690707CF2C99C2A0D /* Pods-AvitoInternship2022-AvitoInternship2022UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022-AvitoInternship2022UITests.release.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022-AvitoInternship2022UITests/Pods-AvitoInternship2022-AvitoInternship2022UITests.release.xcconfig"; sourceTree = "<group>"; };
+		38F1DB9F7F7E669D2379550E /* Pods_AvitoInternship2022_AvitoInternship2022UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvitoInternship2022_AvitoInternship2022UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7784453A1D0C2E66EBF1E473 /* Pods_AvitoInternship2022Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvitoInternship2022Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F6B2D5122EDC29BD4F2F38 /* Pods_AvitoInternship2022.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvitoInternship2022.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A508DFED2903FD3E003C7A23 /* EmployeesSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesSectionHeaderView.swift; sourceTree = "<group>"; };
 		A52074FD2904604A005C42D6 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		A529C2B028FEF60500E2FD55 /* AvitoInternship2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoInternship2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +170,9 @@
 		A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFetcherTests.swift; sourceTree = "<group>"; };
 		A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedURLCacheFacade.swift; sourceTree = "<group>"; };
 		A5C35B082905ECB7000108CB /* MockedNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkService.swift; sourceTree = "<group>"; };
+		A5C35B232905F6B0000108CB /* AvitoInternship2022UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvitoInternship2022UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternship2022UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenUITest.swift; sourceTree = "<group>"; };
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
@@ -161,6 +180,11 @@
 		A5E817942901F23B009833BF /* UIColor + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + extensions.swift"; sourceTree = "<group>"; };
 		A5E8179A29028163009833BF /* UserAvatarGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarGenerator.swift; sourceTree = "<group>"; };
 		A5E817A02902CEE1009833BF /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
+		AECBF097C3B4EC32F9AC37EB /* Pods-AvitoInternship2022-AvitoInternship2022UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022-AvitoInternship2022UITests.debug.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022-AvitoInternship2022UITests/Pods-AvitoInternship2022-AvitoInternship2022UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B919ABE7BA4E17B07A560FC3 /* Pods-AvitoInternship2022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022.release.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022/Pods-AvitoInternship2022.release.xcconfig"; sourceTree = "<group>"; };
+		BC9EADC52239871F1A3F5960 /* Pods-AvitoInternship2022Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022Tests.release.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022Tests/Pods-AvitoInternship2022Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C8C93B66131FC6350CEC2BA5 /* Pods-AvitoInternship2022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022.debug.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022/Pods-AvitoInternship2022.debug.xcconfig"; sourceTree = "<group>"; };
+		EF8D500DAF6EB36A849BB8E4 /* Pods-AvitoInternship2022Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoInternship2022Tests.debug.xcconfig"; path = "Target Support Files/Pods-AvitoInternship2022Tests/Pods-AvitoInternship2022Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294AEDE0C27FECAE2447252E /* Pods_AvitoInternship2022.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +200,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3096509A839BE6473C621BB3 /* Pods_AvitoInternship2022Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C35B202905F6B0000108CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE4C7F416084027A7EA04F4 /* Pods_AvitoInternship2022_AvitoInternship2022UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +228,10 @@
 			children = (
 				A529C2B228FEF60500E2FD55 /* AvitoInternship2022 */,
 				A529C30F28FF00DD00E2FD55 /* AvitoInternship2022Tests */,
+				A5C35B242905F6B0000108CB /* AvitoInternship2022UITests */,
 				A529C2B128FEF60500E2FD55 /* Products */,
+				E743412ABD5C7F7CDE30538B /* Pods */,
+				C48AF0DCD56206752393ABD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +240,7 @@
 			children = (
 				A529C2B028FEF60500E2FD55 /* AvitoInternship2022.app */,
 				A529C30E28FF00DD00E2FD55 /* AvitoInternship2022Tests.xctest */,
+				A5C35B232905F6B0000108CB /* AvitoInternship2022UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +465,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		A5C35B242905F6B0000108CB /* AvitoInternship2022UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */,
+				A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */,
+			);
+			path = AvitoInternship2022UITests;
+			sourceTree = "<group>";
+		};
 		A5E8178B2901D2BC009833BF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +498,29 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C48AF0DCD56206752393ABD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98F6B2D5122EDC29BD4F2F38 /* Pods_AvitoInternship2022.framework */,
+				38F1DB9F7F7E669D2379550E /* Pods_AvitoInternship2022_AvitoInternship2022UITests.framework */,
+				7784453A1D0C2E66EBF1E473 /* Pods_AvitoInternship2022Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E743412ABD5C7F7CDE30538B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8C93B66131FC6350CEC2BA5 /* Pods-AvitoInternship2022.debug.xcconfig */,
+				B919ABE7BA4E17B07A560FC3 /* Pods-AvitoInternship2022.release.xcconfig */,
+				AECBF097C3B4EC32F9AC37EB /* Pods-AvitoInternship2022-AvitoInternship2022UITests.debug.xcconfig */,
+				2DE1B9C690707CF2C99C2A0D /* Pods-AvitoInternship2022-AvitoInternship2022UITests.release.xcconfig */,
+				EF8D500DAF6EB36A849BB8E4 /* Pods-AvitoInternship2022Tests.debug.xcconfig */,
+				BC9EADC52239871F1A3F5960 /* Pods-AvitoInternship2022Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,6 +528,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A529C2C428FEF60600E2FD55 /* Build configuration list for PBXNativeTarget "AvitoInternship2022" */;
 			buildPhases = (
+				4408B3643A6D33B0F75BE69A /* [CP] Check Pods Manifest.lock */,
 				A529C2C728FEF70D00E2FD55 /* SwiftLint */,
 				A529C2AC28FEF60500E2FD55 /* Sources */,
 				A529C2AD28FEF60500E2FD55 /* Frameworks */,
@@ -476,6 +547,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A529C31428FF00DD00E2FD55 /* Build configuration list for PBXNativeTarget "AvitoInternship2022Tests" */;
 			buildPhases = (
+				2E0572C04A43E0745EBD49D9 /* [CP] Check Pods Manifest.lock */,
 				A529C30A28FF00DD00E2FD55 /* Sources */,
 				A529C30B28FF00DD00E2FD55 /* Frameworks */,
 				A529C30C28FF00DD00E2FD55 /* Resources */,
@@ -489,6 +561,26 @@
 			productName = AvitoInternship2022Tests;
 			productReference = A529C30E28FF00DD00E2FD55 /* AvitoInternship2022Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5C35B222905F6B0000108CB /* AvitoInternship2022UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5C35B2B2905F6B0000108CB /* Build configuration list for PBXNativeTarget "AvitoInternship2022UITests" */;
+			buildPhases = (
+				F6FEC27D51C35A855A37928A /* [CP] Check Pods Manifest.lock */,
+				A5C35B1F2905F6B0000108CB /* Sources */,
+				A5C35B202905F6B0000108CB /* Frameworks */,
+				A5C35B212905F6B0000108CB /* Resources */,
+				7C2BA11DDFE13C30CE2168C2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5C35B2A2905F6B0000108CB /* PBXTargetDependency */,
+			);
+			name = AvitoInternship2022UITests;
+			productName = AvitoInternship2022UITests;
+			productReference = A5C35B232905F6B0000108CB /* AvitoInternship2022UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -504,6 +596,10 @@
 						CreatedOnToolsVersion = 14.0;
 					};
 					A529C30D28FF00DD00E2FD55 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = A529C2AF28FEF60500E2FD55;
+					};
+					A5C35B222905F6B0000108CB = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = A529C2AF28FEF60500E2FD55;
 					};
@@ -524,6 +620,7 @@
 			targets = (
 				A529C2AF28FEF60500E2FD55 /* AvitoInternship2022 */,
 				A529C30D28FF00DD00E2FD55 /* AvitoInternship2022Tests */,
+				A5C35B222905F6B0000108CB /* AvitoInternship2022UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -567,9 +664,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C35B212905F6B0000108CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E0572C04A43E0745EBD49D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvitoInternship2022Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4408B3643A6D33B0F75BE69A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvitoInternship2022-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C2BA11DDFE13C30CE2168C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvitoInternship2022-AvitoInternship2022UITests/Pods-AvitoInternship2022-AvitoInternship2022UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvitoInternship2022-AvitoInternship2022UITests/Pods-AvitoInternship2022-AvitoInternship2022UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AvitoInternship2022-AvitoInternship2022UITests/Pods-AvitoInternship2022-AvitoInternship2022UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A529C2C728FEF70D00E2FD55 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -588,6 +753,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F6FEC27D51C35A855A37928A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvitoInternship2022-AvitoInternship2022UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -651,6 +838,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C35B1F2905F6B0000108CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C35B282905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift in Sources */,
+				A5C35B2F2905F7DE000108CB /* EmployeesScreenUITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -658,6 +854,11 @@
 			isa = PBXTargetDependency;
 			target = A529C2AF28FEF60500E2FD55 /* AvitoInternship2022 */;
 			targetProxy = A529C31228FF00DD00E2FD55 /* PBXContainerItemProxy */;
+		};
+		A5C35B2A2905F6B0000108CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A529C2AF28FEF60500E2FD55 /* AvitoInternship2022 */;
+			targetProxy = A5C35B292905F6B0000108CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -789,6 +990,7 @@
 		};
 		A529C2C528FEF60600E2FD55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C93B66131FC6350CEC2BA5 /* Pods-AvitoInternship2022.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -799,8 +1001,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Employees;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -819,6 +1021,7 @@
 		};
 		A529C2C628FEF60600E2FD55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B919ABE7BA4E17B07A560FC3 /* Pods-AvitoInternship2022.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -829,8 +1032,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Employees;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -849,6 +1052,7 @@
 		};
 		A529C31528FF00DD00E2FD55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8D500DAF6EB36A849BB8E4 /* Pods-AvitoInternship2022Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -870,6 +1074,7 @@
 		};
 		A529C31628FF00DD00E2FD55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9EADC52239871F1A3F5960 /* Pods-AvitoInternship2022Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -886,6 +1091,50 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AvitoInternship2022.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AvitoInternship2022";
+			};
+			name = Release;
+		};
+		A5C35B2C2905F6B0000108CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AECBF097C3B4EC32F9AC37EB /* Pods-AvitoInternship2022-AvitoInternship2022UITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IgorKlyuzhev.AvitoInternship2022UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AvitoInternship2022;
+			};
+			name = Debug;
+		};
+		A5C35B2D2905F6B0000108CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE1B9C690707CF2C99C2A0D /* Pods-AvitoInternship2022-AvitoInternship2022UITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4D7YJ8BY8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IgorKlyuzhev.AvitoInternship2022UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AvitoInternship2022;
 			};
 			name = Release;
 		};
@@ -915,6 +1164,15 @@
 			buildConfigurations = (
 				A529C31528FF00DD00E2FD55 /* Debug */,
 				A529C31628FF00DD00E2FD55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5C35B2B2905F6B0000108CB /* Build configuration list for PBXNativeTarget "AvitoInternship2022UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5C35B2C2905F6B0000108CB /* Debug */,
+				A5C35B2D2905F6B0000108CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

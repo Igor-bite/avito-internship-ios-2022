@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_AvitoInternship2022_AvitoInternship2022UITests : NSObject
+@end
+@implementation PodsDummy_Pods_AvitoInternship2022_AvitoInternship2022UITests
+@end
