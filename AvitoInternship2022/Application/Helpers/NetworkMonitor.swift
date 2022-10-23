@@ -12,7 +12,13 @@ extension Notification.Name {
     static let connectivityStatus = Notification.Name(rawValue: "connectivityStatusChanged")
 }
 
-final class NetworkMonitor {
+protocol NetworkMonitorProtocol {
+    var isConnected: Bool { get }
+    func startMonitoring()
+    func stopMonitoring()
+}
+
+final class NetworkMonitor: NetworkMonitorProtocol {
     static let shared = NetworkMonitor()
 
     private let queue = DispatchQueue(label: "NetworkConnectivityMonitor")

@@ -7,8 +7,12 @@
 
 import UIKit
 
-final class URLOpener {
-    static func openUrl(_ url: URL?) {
+protocol URLOpener {
+    func openUrl(_ url: URL?)
+}
+
+final class BasicURLOpener: URLOpener {
+    func openUrl(_ url: URL?) {
         if let url = url, UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
