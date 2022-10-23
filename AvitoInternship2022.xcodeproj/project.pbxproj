@@ -40,7 +40,7 @@
 		A529C30728FEFFA000E2FD55 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30328FEFFA000E2FD55 /* ViewInterface.swift */; };
 		A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */; };
 		A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */; };
-		A529C31128FF00DD00E2FD55 /* AvitoInternship2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */; };
+		A529C31128FF00DD00E2FD55 /* URLCacheFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */; };
 		A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */; };
 		A529C31E28FF41F900E2FD55 /* EmployeesScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */; };
 		A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */; };
@@ -115,7 +115,7 @@
 		A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
 		A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		A529C30E28FF00DD00E2FD55 /* AvitoInternship2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvitoInternship2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternship2022Tests.swift; sourceTree = "<group>"; };
+		A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeTests.swift; sourceTree = "<group>"; };
 		A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInterfaces.swift; sourceTree = "<group>"; };
 		A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenWireframe.swift; sourceTree = "<group>"; };
 		A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenViewController.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 		A529C30F28FF00DD00E2FD55 /* AvitoInternship2022Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */,
+				A53B4D2C2905B56200EDFE64 /* Services */,
 			);
 			path = AvitoInternship2022Tests;
 			sourceTree = "<group>";
@@ -355,6 +355,14 @@
 				A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */,
 			);
 			path = URLCacheFacade;
+			sourceTree = "<group>";
+		};
+		A53B4D2C2905B56200EDFE64 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A565FD222902E97700CDDABD /* Views */ = {
@@ -575,7 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A529C31128FF00DD00E2FD55 /* AvitoInternship2022Tests.swift in Sources */,
+				A529C31128FF00DD00E2FD55 /* URLCacheFacadeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
