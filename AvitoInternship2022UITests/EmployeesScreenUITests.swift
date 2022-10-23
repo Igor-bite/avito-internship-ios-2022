@@ -7,7 +7,7 @@
 
 import FBSnapshotTestCase
 
-final class EmployeesScreenUITest: FBSnapshotTestCase {
+final class EmployeesScreenUITests: FBSnapshotTestCase {
     let app = XCUIApplication()
 
     override func setUp() {

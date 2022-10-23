@@ -73,7 +73,7 @@
 		A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */; };
 		A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B082905ECB7000108CB /* MockedNetworkService.swift */; };
 		A5C35B282905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */; };
-		A5C35B2F2905F7DE000108CB /* EmployeesScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */; };
+		A5C35B2F2905F7DE000108CB /* EmployeesScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B2E2905F7DE000108CB /* EmployeesScreenUITests.swift */; };
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
@@ -172,7 +172,7 @@
 		A5C35B082905ECB7000108CB /* MockedNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkService.swift; sourceTree = "<group>"; };
 		A5C35B232905F6B0000108CB /* AvitoInternship2022UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvitoInternship2022UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternship2022UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenUITest.swift; sourceTree = "<group>"; };
+		A5C35B2E2905F7DE000108CB /* EmployeesScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenUITests.swift; sourceTree = "<group>"; };
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C35B272905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift */,
-				A5C35B2E2905F7DE000108CB /* EmployeesScreenUITest.swift */,
+				A5C35B2E2905F7DE000108CB /* EmployeesScreenUITests.swift */,
 			);
 			path = AvitoInternship2022UITests;
 			sourceTree = "<group>";
@@ -843,7 +843,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5C35B282905F6B0000108CB /* AvitoInternship2022UITestsLaunchTests.swift in Sources */,
-				A5C35B2F2905F7DE000108CB /* EmployeesScreenUITest.swift in Sources */,
+				A5C35B2F2905F7DE000108CB /* EmployeesScreenUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
