@@ -59,6 +59,7 @@ final class EmployeesScreenViewController: UIViewController {
         collectionView.allowsSelection = false
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl?.beginRefreshing()
 
         return collectionView
     }()
@@ -154,7 +155,9 @@ final class EmployeesScreenViewController: UIViewController {
 
     private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Company.Employee) -> UICollectionViewCell? {
         guard let cell: EmployeeCell = collectionView.dequeueReusableCell(for: indexPath) else { return nil }
-        cell.configure(employee: item)
+        cell.configure(employee: item) { [weak self] in
+            self?.presenter?.phoneNumberTapped(forItemAt: indexPath)
+        }
         return cell
     }
 
