@@ -40,7 +40,7 @@
 		A529C30728FEFFA000E2FD55 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30328FEFFA000E2FD55 /* ViewInterface.swift */; };
 		A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */; };
 		A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */; };
-		A529C31128FF00DD00E2FD55 /* AvitoInternship2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */; };
+		A529C31128FF00DD00E2FD55 /* URLCacheFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */; };
 		A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */; };
 		A529C31E28FF41F900E2FD55 /* EmployeesScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */; };
 		A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */; };
@@ -58,7 +58,17 @@
 		A529C33B2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */; };
 		A52AAB9F290482F800DEB5AB /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52AAB9E290482F800DEB5AB /* HapticFeedbackGenerator.swift */; };
 		A53B4D262905683A00EDFE64 /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B4D252905683A00EDFE64 /* URLOpener.swift */; };
+		A53B4D362905B90900EDFE64 /* EmployeesScreenInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B4D312905B90900EDFE64 /* EmployeesScreenInteractorTests.swift */; };
+		A53B4D372905B90900EDFE64 /* MockedCompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B4D332905B90900EDFE64 /* MockedCompanyService.swift */; };
+		A53B4D392905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53B4D382905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift */; };
 		A594E45C2904AA3500B737D4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594E45B2904AA3500B737D4 /* Logger.swift */; };
+		A5C35AFB2905DA54000108CB /* MockedURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35AFA2905DA54000108CB /* MockedURLOpener.swift */; };
+		A5C35AFD2905DA80000108CB /* MockedNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35AFC2905DA80000108CB /* MockedNetworkMonitor.swift */; };
+		A5C35B012905DAD5000108CB /* MockedEmployeesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B002905DAD5000108CB /* MockedEmployeesScreenView.swift */; };
+		A5C35B032905DAE8000108CB /* MockedEmployeesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B022905DAE8000108CB /* MockedEmployeesScreenInteractor.swift */; };
+		A5C35B052905DBC2000108CB /* CompanyFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */; };
+		A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */; };
+		A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B082905ECB7000108CB /* MockedNetworkService.swift */; };
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
@@ -115,7 +125,7 @@
 		A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
 		A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		A529C30E28FF00DD00E2FD55 /* AvitoInternship2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvitoInternship2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternship2022Tests.swift; sourceTree = "<group>"; };
+		A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeTests.swift; sourceTree = "<group>"; };
 		A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInterfaces.swift; sourceTree = "<group>"; };
 		A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenWireframe.swift; sourceTree = "<group>"; };
 		A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +143,17 @@
 		A529C33A2901B26D00E2FD55 /* URLCacheFacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeProtocol.swift; sourceTree = "<group>"; };
 		A52AAB9E290482F800DEB5AB /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		A53B4D252905683A00EDFE64 /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
+		A53B4D312905B90900EDFE64 /* EmployeesScreenInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInteractorTests.swift; sourceTree = "<group>"; };
+		A53B4D332905B90900EDFE64 /* MockedCompanyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedCompanyService.swift; sourceTree = "<group>"; };
+		A53B4D382905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenPresenterTests.swift; sourceTree = "<group>"; };
 		A594E45B2904AA3500B737D4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A5C35AFA2905DA54000108CB /* MockedURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedURLOpener.swift; sourceTree = "<group>"; };
+		A5C35AFC2905DA80000108CB /* MockedNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkMonitor.swift; sourceTree = "<group>"; };
+		A5C35B002905DAD5000108CB /* MockedEmployeesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEmployeesScreenView.swift; sourceTree = "<group>"; };
+		A5C35B022905DAE8000108CB /* MockedEmployeesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEmployeesScreenInteractor.swift; sourceTree = "<group>"; };
+		A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFetcherTests.swift; sourceTree = "<group>"; };
+		A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedURLCacheFacade.swift; sourceTree = "<group>"; };
+		A5C35B082905ECB7000108CB /* MockedNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkService.swift; sourceTree = "<group>"; };
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
@@ -308,7 +328,9 @@
 		A529C30F28FF00DD00E2FD55 /* AvitoInternship2022Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A529C31028FF00DD00E2FD55 /* AvitoInternship2022Tests.swift */,
+				A53B4D302905B90900EDFE64 /* EmployeesScreen */,
+				A53B4D322905B90900EDFE64 /* Mocks */,
+				A53B4D2C2905B56200EDFE64 /* Services */,
 			);
 			path = AvitoInternship2022Tests;
 			sourceTree = "<group>";
@@ -357,12 +379,52 @@
 			path = URLCacheFacade;
 			sourceTree = "<group>";
 		};
+		A53B4D2C2905B56200EDFE64 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */,
+				A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A53B4D302905B90900EDFE64 /* EmployeesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A5C35AFF2905DAC8000108CB /* Mocks */,
+				A53B4D312905B90900EDFE64 /* EmployeesScreenInteractorTests.swift */,
+				A53B4D382905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift */,
+			);
+			path = EmployeesScreen;
+			sourceTree = "<group>";
+		};
+		A53B4D322905B90900EDFE64 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A53B4D332905B90900EDFE64 /* MockedCompanyService.swift */,
+				A5C35AFA2905DA54000108CB /* MockedURLOpener.swift */,
+				A5C35AFC2905DA80000108CB /* MockedNetworkMonitor.swift */,
+				A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */,
+				A5C35B082905ECB7000108CB /* MockedNetworkService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		A565FD222902E97700CDDABD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A5E817A02902CEE1009833BF /* TagsListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5C35AFF2905DAC8000108CB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A5C35B002905DAD5000108CB /* MockedEmployeesScreenView.swift */,
+				A5C35B022905DAE8000108CB /* MockedEmployeesScreenInteractor.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A5E8178B2901D2BC009833BF /* Helpers */ = {
@@ -575,7 +637,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A529C31128FF00DD00E2FD55 /* AvitoInternship2022Tests.swift in Sources */,
+				A5C35AFD2905DA80000108CB /* MockedNetworkMonitor.swift in Sources */,
+				A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */,
+				A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */,
+				A5C35B032905DAE8000108CB /* MockedEmployeesScreenInteractor.swift in Sources */,
+				A53B4D392905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift in Sources */,
+				A53B4D372905B90900EDFE64 /* MockedCompanyService.swift in Sources */,
+				A5C35B052905DBC2000108CB /* CompanyFetcherTests.swift in Sources */,
+				A5C35B012905DAD5000108CB /* MockedEmployeesScreenView.swift in Sources */,
+				A53B4D362905B90900EDFE64 /* EmployeesScreenInteractorTests.swift in Sources */,
+				A5C35AFB2905DA54000108CB /* MockedURLOpener.swift in Sources */,
+				A529C31128FF00DD00E2FD55 /* URLCacheFacadeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,8 @@ final class EmployeesScreenPresenter {
     private weak var view: EmployeesScreenViewInterface?
     private let interactor: EmployeesScreenInteractorInterface
     private let wireframe: EmployeesScreenWireframeInterface
-    private let networkMonitor = NetworkMonitor.shared
+    private let networkMonitor: NetworkMonitorProtocol
+    private let urlOpener: URLOpener
 
     private var company: Company? {
         didSet {
@@ -34,13 +35,22 @@ final class EmployeesScreenPresenter {
     init(
         view: EmployeesScreenViewInterface,
         interactor: EmployeesScreenInteractorInterface,
-        wireframe: EmployeesScreenWireframeInterface
+        wireframe: EmployeesScreenWireframeInterface,
+        networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared,
+        urlOpener: URLOpener = BasicURLOpener()
     ) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        self.networkMonitor = networkMonitor
+        self.urlOpener = urlOpener
 
-        NotificationCenter.default.addObserver(self, selector: #selector(connectivityStatusChanged), name: .connectivityStatus, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(connectivityStatusChanged),
+                                               name: .connectivityStatus, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .connectivityStatus, object: nil)
     }
 
     @objc
@@ -116,6 +126,6 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
 
     func phoneNumberTapped(forItemAt indexPath: IndexPath) {
         guard let employee = sortedEmployees?[indexPath.row] else { return }
-        URLOpener.openUrl(.init(string: "tel://\(employee.phoneNumber)"))
+        urlOpener.openUrl(.init(string: "tel://\(employee.phoneNumber)"))
     }
 }
