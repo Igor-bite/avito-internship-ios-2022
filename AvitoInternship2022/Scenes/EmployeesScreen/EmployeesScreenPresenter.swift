@@ -113,4 +113,9 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     func noInternetIconTapped() {
         showAlert(withTitle: "No Internet connection", message: nil)
     }
+
+    func phoneNumberTapped(forItemAt indexPath: IndexPath) {
+        guard let employee = sortedEmployees?[indexPath.row] else { return }
+        URLOpener.openUrl(.init(string: "tel://\(employee.phoneNumber)"))
+    }
 }

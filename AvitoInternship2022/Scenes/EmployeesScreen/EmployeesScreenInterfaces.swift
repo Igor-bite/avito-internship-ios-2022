@@ -5,6 +5,8 @@
 //  Created by Игорь Клюжев on 18.10.2022.
 //
 
+import Foundation
+
 protocol EmployeesScreenWireframeInterface: WireframeInterface {}
 
 protocol EmployeesScreenViewInterface: ViewInterface {
@@ -24,6 +26,7 @@ protocol EmployeesScreenPresenterInterface: PresenterInterface {
     func items(forSection section: EmployeesScreenSection) -> [Company.Employee]
     func headerTitle(forSection section: EmployeesScreenSection) -> String?
     func noInternetIconTapped()
+    func phoneNumberTapped(forItemAt indexPath: IndexPath)
 }
 
 protocol EmployeesScreenInteractorInterface: InteractorInterface {

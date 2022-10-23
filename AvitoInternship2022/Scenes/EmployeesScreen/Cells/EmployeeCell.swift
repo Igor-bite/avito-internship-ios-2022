@@ -45,19 +45,25 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         return label
     }()
 
-    private let phoneImageView = {
+    private lazy var phoneImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: Constants.Icon.phoneImageName)
         view.tintColor = .Pallette.ElementColors.iconColor
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(numberTapped)))
         return view
     }()
 
-    private let phoneNumberLabel = {
+    private lazy var phoneNumberLabel = {
         let label = UILabel()
         label.textColor = .Pallette.ElementColors.textColor
         label.font = FontFamily.Lato.regular.font(size: 15)
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(numberTapped)))
         return label
     }()
+
+    private var numberTapAction: (() -> Void)?
 
     private let skillsListView = {
         let view = TagsListView(frame: .zero)
@@ -89,7 +95,8 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(employee: Company.Employee) {
+    func configure(employee: Company.Employee, onNumberTap: (() -> Void)? = nil) {
+        numberTapAction = onNumberTap
         nameLabel.text = employee.name
         phoneNumberLabel.text = employee.phoneNumber
         let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
@@ -215,5 +222,10 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
             trail,
             height
         ]
+    }
+
+    @objc
+    private func numberTapped() {
+        numberTapAction?()
     }
 }
