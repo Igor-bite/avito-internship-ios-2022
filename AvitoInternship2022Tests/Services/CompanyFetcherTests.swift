@@ -74,24 +74,7 @@ final class CompanyFetcherTests: XCTestCase {
         let forceRefresh = false
         networkService.result = .success((requestData, urlResponse))
 
-//        when
-        let exp = expectation(description: "Wait for completion")
-
-        sut.getCompany(forceRefresh: forceRefresh) { result in
-
-//            then
-            switch result {
-            case .success(let retrievedCompany):
-                XCTAssertEqual(self.company, retrievedCompany)
-            case .failure(let error):
-                XCTFail("Failed with error: \(error); Request must succeed")
-            }
-            exp.fulfill()
-        }
-        XCTAssertEqual(networkService.requestMethodCalls, 1, "Request network must be called only once")
-
-        wait(for: [exp], timeout: 0.1)
-        XCTAssertEqual(cache.insertCalledTimes, 1, "Fetched data must be saved 1 time")
+        checkFetchThroughNetworkAndSaveToCache(forceRefresh: forceRefresh)
     }
 
     func test_givenForceRefreshTrue_whenDataInCache_thenRequestAndReturnNetworkData() throws {
@@ -100,31 +83,17 @@ final class CompanyFetcherTests: XCTestCase {
         cache.data = requestData
         networkService.result = .success((requestData, urlResponse))
 
-//        when
-        let exp = expectation(description: "Wait for completion")
-
-        sut.getCompany(forceRefresh: forceRefresh) { result in
-
-//            then
-            switch result {
-            case .success(let retrievedCompany):
-                XCTAssertEqual(self.company, retrievedCompany)
-            case .failure(let error):
-                XCTFail("Failed with error: \(error); Request must succeed")
-            }
-            exp.fulfill()
-        }
-        XCTAssertEqual(networkService.requestMethodCalls, 1, "Request network must be called only once")
-
-        wait(for: [exp], timeout: 0.1)
-        XCTAssertEqual(cache.insertCalledTimes, 1, "Fetched data must be saved 1 time")
+        checkFetchThroughNetworkAndSaveToCache(forceRefresh: forceRefresh)
     }
 
     func test_givenForceRefreshTrue_whenDataNotInCache_thenRequestAndReturnNetworkData() throws {
-//        given
         let forceRefresh = true
         networkService.result = .success((requestData, urlResponse))
 
+        checkFetchThroughNetworkAndSaveToCache(forceRefresh: forceRefresh)
+    }
+
+    func checkFetchThroughNetworkAndSaveToCache(forceRefresh: Bool) {
 //        when
         let exp = expectation(description: "Wait for completion")
 
