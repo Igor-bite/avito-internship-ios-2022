@@ -67,6 +67,8 @@
 		A5C35B012905DAD5000108CB /* MockedEmployeesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B002905DAD5000108CB /* MockedEmployeesScreenView.swift */; };
 		A5C35B032905DAE8000108CB /* MockedEmployeesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B022905DAE8000108CB /* MockedEmployeesScreenInteractor.swift */; };
 		A5C35B052905DBC2000108CB /* CompanyFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */; };
+		A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */; };
+		A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C35B082905ECB7000108CB /* MockedNetworkService.swift */; };
 		A5E8178A2901D274009833BF /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E817892901D274009833BF /* EmployeeCell.swift */; };
 		A5E8178E2901D2C8009833BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178C2901D2C8009833BF /* Reusable.swift */; };
 		A5E8178F2901D2C8009833BF /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */; };
@@ -150,6 +152,8 @@
 		A5C35B002905DAD5000108CB /* MockedEmployeesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEmployeesScreenView.swift; sourceTree = "<group>"; };
 		A5C35B022905DAE8000108CB /* MockedEmployeesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEmployeesScreenInteractor.swift; sourceTree = "<group>"; };
 		A5C35B042905DBC2000108CB /* CompanyFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFetcherTests.swift; sourceTree = "<group>"; };
+		A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedURLCacheFacade.swift; sourceTree = "<group>"; };
+		A5C35B082905ECB7000108CB /* MockedNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkService.swift; sourceTree = "<group>"; };
 		A5E817892901D274009833BF /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		A5E8178C2901D2C8009833BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A5E8178D2901D2C8009833BF /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				A53B4D332905B90900EDFE64 /* MockedCompanyService.swift */,
 				A5C35AFA2905DA54000108CB /* MockedURLOpener.swift */,
 				A5C35AFC2905DA80000108CB /* MockedNetworkMonitor.swift */,
+				A5C35B062905ECAF000108CB /* MockedURLCacheFacade.swift */,
+				A5C35B082905ECB7000108CB /* MockedNetworkService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -632,6 +638,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5C35AFD2905DA80000108CB /* MockedNetworkMonitor.swift in Sources */,
+				A5C35B072905ECAF000108CB /* MockedURLCacheFacade.swift in Sources */,
+				A5C35B092905ECB7000108CB /* MockedNetworkService.swift in Sources */,
 				A5C35B032905DAE8000108CB /* MockedEmployeesScreenInteractor.swift in Sources */,
 				A53B4D392905BA9B00EDFE64 /* EmployeesScreenPresenterTests.swift in Sources */,
 				A53B4D372905B90900EDFE64 /* MockedCompanyService.swift in Sources */,

@@ -114,33 +114,3 @@ final class CompanyFetcherTests: XCTestCase {
         XCTAssertEqual(cache.insertCalledTimes, 1, "Fetched data must be saved 1 time")
     }
 }
-
-final class MockedNetworkService: NetworkServiceProtocol {
-    var requestMethodCalls = 0
-    var result: Result<(data: Data?, response: URLResponse?), Error>?
-
-    func request(_ request: URLRequest, completion: @escaping (Result<(data: Data?, response: URLResponse?), Error>) -> Void) {
-        requestMethodCalls += 1
-        if let result = result {
-            completion(result)
-        }
-    }
-}
-
-final class MockedURLCacheFacade: URLCacheFacadeProtocol {
-    var data: Data?
-    var insertCalledTimes = 0
-    var removeCalledTimes = 0
-
-    func insert(_ data: Data, forRequest request: URLRequest, withResponse response: URLResponse, lifetime: TimeInterval?) {
-        insertCalledTimes += 1
-    }
-
-    func removeData(forRequest request: URLRequest) {
-        removeCalledTimes += 1
-    }
-
-    func data(forRequest request: URLRequest) -> Data? {
-        return data
-    }
-}
