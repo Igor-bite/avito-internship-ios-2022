@@ -9,25 +9,24 @@ import XCTest
 @testable import AvitoInternship2022
 
 final class URLCacheFacadeTests: XCTestCase {
+    private enum Constants {
+        static let url = URL(string: "https://www.test.com")!
+    }
+
     private var sut: URLCacheFacade!
     private var data: Data!
-    private var urlRequest: URLRequest!
-    private var urlResponse: URLResponse!
+    private var urlRequest = URLRequest(url: Constants.url)
+    private var urlResponse = URLResponse(url: Constants.url, mimeType: nil,
+                                          expectedContentLength: 0, textEncodingName: nil)
 
     override func setUp() {
         sut = URLCacheFacade(memoryCapacity: 1_024 * 1_024, diskCapacity: 1_024 * 1_024, diskPath: "diskPath")
         data = String("Hello world").data(using: .utf8)!
-        let url = URL(string: "https://www.test.com")!
-        urlRequest = URLRequest(url: url)
-        urlResponse = URLResponse(url: url, mimeType: nil,
-                                  expectedContentLength: data.count, textEncodingName: nil)
     }
 
     override func tearDown() {
         sut = nil
         data = nil
-        urlRequest = nil
-        urlResponse = nil
     }
 
     func test_givenCache_whenInsertWithLifetimeMoreThanTimeElapsed_thenDataExist() throws {

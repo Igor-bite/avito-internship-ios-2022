@@ -39,8 +39,8 @@ final class EmployeesScreenInteractorTests: XCTestCase {
             switch fetchedResult {
             case .success(let retrievedCompany):
                 XCTAssert(retrievedCompany == self.company, "Company retrieved must be the same")
-            case .failure:
-                XCTFail("Must be success")
+            case .failure(let error):
+                XCTFail("Must be success, but got error: \(error.localizedDescription)")
             }
             exp.fulfill()
         }
