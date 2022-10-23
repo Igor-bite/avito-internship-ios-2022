@@ -13,18 +13,18 @@ final class EmployeesScreenUITests: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
         fileNameOptions = [.OS, .device]
-        app.launch()
     }
 
     func test_checkLayout() throws {
-        Thread.sleep(forTimeInterval: 2.0)
+        app.launch()
 
+        Thread.sleep(forTimeInterval: 2.0)
         verifyView(identifier: "EmployeesScreen")
     }
 
     func testLaunchPerformance() throws {
         measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+            app.launch()
         }
     }
 
