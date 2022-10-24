@@ -131,7 +131,7 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
     }
 }
 
-//MARK: - Constraints related methods
+// MARK: - Constraints related methods
 
 private extension EmployeeCell {
     private func constraintsForContentView() -> [NSLayoutConstraint] {
