@@ -1,12 +1,9 @@
-name: Build and Test
+name: Build and Unit Test
 
 env:
     BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 on:
-  push:
-    branches:
-      - develop
   pull_request:
 
 jobs:
@@ -21,7 +18,7 @@ jobs:
     - name: Run
       env:
         SLACK_URL: ${{ secrets.SLACK_URL }}
-      run: bundle exec fastlane build_and_test
+      run: bundle exec fastlane build_and_test_unit
     - uses: actions/upload-artifact@v3
       if: failure()
       with:

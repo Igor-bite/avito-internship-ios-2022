@@ -21,21 +21,45 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Build for testing
 
-### run_tests_from_build
+### run_unit_tests_from_build
 
 ```sh
-[bundle exec] fastlane run_tests_from_build
+[bundle exec] fastlane run_unit_tests_from_build
 ```
 
-Run tests
+Run Unit tests
 
-### build_and_test
+### run_ui_tests_from_build
 
 ```sh
-[bundle exec] fastlane build_and_test
+[bundle exec] fastlane run_ui_tests_from_build
 ```
 
-Build and test
+Run UI tests
+
+### build_and_test_unit_ui
+
+```sh
+[bundle exec] fastlane build_and_test_unit_ui
+```
+
+Build and test Unit + UI
+
+### build_and_test_unit
+
+```sh
+[bundle exec] fastlane build_and_test_unit
+```
+
+Build and test Unit
+
+### build_and_test_ui
+
+```sh
+[bundle exec] fastlane build_and_test_ui
+```
+
+Build and test UI
 
 ----
 
