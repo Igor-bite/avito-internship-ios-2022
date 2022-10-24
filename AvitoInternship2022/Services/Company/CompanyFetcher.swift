@@ -21,7 +21,6 @@ final class CompanyFetcher: CompanyService {
 
     private let networkService: NetworkServiceProtocol
     private let cache: URLCacheFacadeProtocol?
-    private lazy var urlSession = URLSession(configuration: .default)
     private let decoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
