@@ -102,8 +102,6 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         let avatarSize = CGSize(width: Constants.Icon.bigSizeSide, height: Constants.Icon.bigSizeSide)
         avatarImageView.image = UserAvatarGenerator.generateUserImage(userName: employee.name, withSize: avatarSize)
         skillsListView.tagNames = employee.skills
-        skillsHeightConstraint?.constant = skillsListView.preferredHeight(forWidth: frame.width - Constants.innerViewsOffset * 4)
-        setNeedsLayout()
     }
 
     private func setupViews() {
@@ -121,6 +119,21 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         NSLayoutConstraint.activate(constraints)
     }
 
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        skillsHeightConstraint?.constant = skillsListView.preferredHeight(forWidth: frame.width - Constants.innerViewsOffset * 4)
+
+        return super.preferredLayoutAttributesFitting(layoutAttributes)
+    }
+
+    @objc
+    private func numberTapped() {
+        numberTapAction?()
+    }
+}
+
+//MARK: - Constraints related methods
+
+private extension EmployeeCell {
     private func constraintsForContentView() -> [NSLayoutConstraint] {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return [
@@ -222,10 +235,5 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
             trail,
             height
         ]
-    }
-
-    @objc
-    private func numberTapped() {
-        numberTapAction?()
     }
 }
