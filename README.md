@@ -7,7 +7,7 @@
 
 ### Devtools
 * SwiftGen для шрифтов и изображений
-* Swiftformat (git hook)
+* SwiftFormat (pre-commit git hook)
 * swiftlint (build phase)
 * GitHub actions + fastlane
 
@@ -31,9 +31,14 @@
 * Unit Тесты
 * UI тесты (snapshot проверка)
 * Выгрузка логов тестов в github actions artefacts при проваленном тестировании
+* Поддержка вертикальной и горизонтальной ориентации
 
 ### Скриншоты
+#### - iPhone
 ![](Screenshots/iphones.png)
+#### - Landscape
+![](Screenshots/iPhone_14_Pro-landscape.png)
+#### - iPad
 ![](Screenshots/ipads.png)
 
 ---
