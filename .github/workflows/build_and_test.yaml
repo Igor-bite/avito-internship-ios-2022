@@ -22,3 +22,8 @@ jobs:
       env:
         SLACK_URL: ${{ secrets.SLACK_URL }}
       run: bundle exec fastlane build_and_test
+    - uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: test_logs
+        path: /Users/runner/work/avito-internship-ios-2022/avito-internship-ios-2022/build_derived_data_folder/Logs/Test/

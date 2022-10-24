@@ -6,7 +6,9 @@ desc "Build for testing"
   lane :build_for_testing do
     run_tests(
       derived_data_path: "build_derived_data_folder",
-      build_for_testing: true
+      build_for_testing: true,
+      device: "iPhone 8 Plus",
+      prelaunch_simulator: true
     )
   end
 
@@ -14,7 +16,9 @@ desc "Run tests"
   lane :run_tests_from_build do
     run_tests(
       derived_data_path: "build_derived_data_folder",
-      test_without_building: true
+      test_without_building: true,
+      device: "iPhone 8 Plus",
+      prelaunch_simulator: true
     )
   end
 
