@@ -23,7 +23,7 @@ jobs:
         SLACK_URL: ${{ secrets.SLACK_URL }}
       run: bundle exec fastlane build_and_test
     - uses: actions/upload-artifact@v3
-      if: always()
+      if: failure()
       with:
         name: diff-screenshots
-        path: AvitoInternship2022UITests/FailureDiffs/AvitoInternship2022UITests.EmployeesScreenUITests/*.png
+        path: AvitoInternship2022UITests/FailureDiffs/
