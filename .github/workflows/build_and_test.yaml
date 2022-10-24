@@ -26,4 +26,4 @@ jobs:
       if: always()
       with:
         name: diff-screenshots
-        path: AvitoInternship2022UITests/FailureDiffs/AvitoInternship2022UITests.EmployeesScreenUITest/*.png
+        path: AvitoInternship2022UITests/FailureDiffs/AvitoInternship2022UITests.EmployeesScreenUITests/*.png
