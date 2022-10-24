@@ -39,13 +39,12 @@
 		A529C2FB28FEFAD300E2FD55 /* Lato-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A529C2E528FEFAD300E2FD55 /* Lato-ExtraLight.ttf */; };
 		A529C2FE28FEFE3300E2FD55 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C2FD28FEFE3300E2FD55 /* Assets.swift */; };
 		A529C30028FEFE3A00E2FD55 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C2FF28FEFE3A00E2FD55 /* Fonts.swift */; };
-		A529C30628FEFFA000E2FD55 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30228FEFFA000E2FD55 /* BaseWireframe.swift */; };
 		A529C30728FEFFA000E2FD55 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30328FEFFA000E2FD55 /* ViewInterface.swift */; };
 		A529C30828FEFFA000E2FD55 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */; };
 		A529C30928FEFFA000E2FD55 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */; };
 		A529C31128FF00DD00E2FD55 /* URLCacheFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */; };
 		A529C31D28FF41F900E2FD55 /* EmployeesScreenInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */; };
-		A529C31E28FF41F900E2FD55 /* EmployeesScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */; };
+		A529C31E28FF41F900E2FD55 /* EmployeesScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31928FF41F900E2FD55 /* EmployeesScreenAssembly.swift */; };
 		A529C31F28FF41F900E2FD55 /* EmployeesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */; };
 		A529C32028FF41F900E2FD55 /* EmployeesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */; };
 		A529C32128FF41F900E2FD55 /* EmployeesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */; };
@@ -136,14 +135,13 @@
 		A529C2E528FEFAD300E2FD55 /* Lato-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A529C2FD28FEFE3300E2FD55 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		A529C2FF28FEFE3A00E2FD55 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		A529C30228FEFFA000E2FD55 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		A529C30328FEFFA000E2FD55 /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
 		A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		A529C30E28FF00DD00E2FD55 /* AvitoInternship2022Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvitoInternship2022Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A529C31028FF00DD00E2FD55 /* URLCacheFacadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheFacadeTests.swift; sourceTree = "<group>"; };
 		A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInterfaces.swift; sourceTree = "<group>"; };
-		A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenWireframe.swift; sourceTree = "<group>"; };
+		A529C31928FF41F900E2FD55 /* EmployeesScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenAssembly.swift; sourceTree = "<group>"; };
 		A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenViewController.swift; sourceTree = "<group>"; };
 		A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenInteractor.swift; sourceTree = "<group>"; };
 		A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesScreenPresenter.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 		A529C30128FEFF7800E2FD55 /* ViperBase */ = {
 			isa = PBXGroup;
 			children = (
-				A529C30228FEFFA000E2FD55 /* BaseWireframe.swift */,
 				A529C30428FEFFA000E2FD55 /* InteractorInterface.swift */,
 				A529C30528FEFFA000E2FD55 /* PresenterInterface.swift */,
 				A529C30328FEFFA000E2FD55 /* ViewInterface.swift */,
@@ -379,7 +376,7 @@
 				A508DFEC2903FD2B003C7A23 /* SupplementaryViews */,
 				A5E817902901E4DC009833BF /* EmployeesScreenSection.swift */,
 				A529C31828FF41F800E2FD55 /* EmployeesScreenInterfaces.swift */,
-				A529C31928FF41F900E2FD55 /* EmployeesScreenWireframe.swift */,
+				A529C31928FF41F900E2FD55 /* EmployeesScreenAssembly.swift */,
 				A529C31A28FF41F900E2FD55 /* EmployeesScreenViewController.swift */,
 				A529C31B28FF41F900E2FD55 /* EmployeesScreenInteractor.swift */,
 				A529C31C28FF41F900E2FD55 /* EmployeesScreenPresenter.swift */,
@@ -785,12 +782,11 @@
 			files = (
 				A594E45C2904AA3500B737D4 /* Logger.swift in Sources */,
 				A529C3322901AA7200E2FD55 /* NetworkService.swift in Sources */,
-				A529C31E28FF41F900E2FD55 /* EmployeesScreenWireframe.swift in Sources */,
+				A529C31E28FF41F900E2FD55 /* EmployeesScreenAssembly.swift in Sources */,
 				A529C30028FEFE3A00E2FD55 /* Fonts.swift in Sources */,
 				A52074FE2904604A005C42D6 /* NetworkMonitor.swift in Sources */,
 				A529C32128FF41F900E2FD55 /* EmployeesScreenPresenter.swift in Sources */,
 				A529C32528FF45D300E2FD55 /* CompanyService.swift in Sources */,
-				A529C30628FEFFA000E2FD55 /* BaseWireframe.swift in Sources */,
 				A529C3372901AB4B00E2FD55 /* TargetType.swift in Sources */,
 				A5E817952901F23B009833BF /* UIColor+extensions.swift in Sources */,
 				A5E817912901E4DC009833BF /* EmployeesScreenSection.swift in Sources */,

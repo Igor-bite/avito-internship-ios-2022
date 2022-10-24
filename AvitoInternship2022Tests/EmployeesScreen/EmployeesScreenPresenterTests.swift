@@ -20,7 +20,7 @@ final class EmployeesScreenPresenterTests: XCTestCase {
         interactor = .init()
         view = .init()
         urlOpener = .init()
-        sut = .init(view: view, interactor: interactor, wireframe: EmployeesScreenWireframe(), networkMonitor: networkMonitor, urlOpener: urlOpener)
+        sut = .init(view: view, interactor: interactor, networkMonitor: networkMonitor, urlOpener: urlOpener)
     }
 
     override func tearDown() {

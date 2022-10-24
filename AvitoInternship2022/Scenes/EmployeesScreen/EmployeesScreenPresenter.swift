@@ -12,7 +12,6 @@ final class EmployeesScreenPresenter {
 
     private weak var view: EmployeesScreenViewInterface?
     private let interactor: EmployeesScreenInteractorInterface
-    private let wireframe: EmployeesScreenWireframeInterface
     private let networkMonitor: NetworkMonitorProtocol
     private let urlOpener: URLOpener
 
@@ -35,13 +34,11 @@ final class EmployeesScreenPresenter {
     init(
         view: EmployeesScreenViewInterface,
         interactor: EmployeesScreenInteractorInterface,
-        wireframe: EmployeesScreenWireframeInterface,
         networkMonitor: NetworkMonitorProtocol = NetworkMonitor.shared,
         urlOpener: URLOpener = BasicURLOpener()
     ) {
         self.view = view
         self.interactor = interactor
-        self.wireframe = wireframe
         self.networkMonitor = networkMonitor
         self.urlOpener = urlOpener
 
