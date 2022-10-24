@@ -12,7 +12,7 @@ final class EmployeesScreenUITests: FBSnapshotTestCase {
 
     override func setUp() {
         super.setUp()
-        fileNameOptions = [.OS, .device]
+        fileNameOptions = [.device]
     }
 
     func test_checkLayout() throws {
