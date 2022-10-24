@@ -30,7 +30,7 @@ final class EmployeesScreenUITests: FBSnapshotTestCase {
 
     func verifyView(identifier: String,
                     perPixelTolerance: CGFloat = 0,
-                    overallTolerance: CGFloat = 0.001) {
+                    overallTolerance: CGFloat = 0.01) {
         guard let screenshotWithoutStatusBar = app.screenshot().image.removingStatusBar else {
             return XCTFail("An error occurred while cropping the screenshot", file: #file, line: #line)
         }

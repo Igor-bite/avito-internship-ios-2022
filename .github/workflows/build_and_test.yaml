@@ -25,5 +25,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       if: failure()
       with:
-        name: diff-screenshots
-        path: AvitoInternship2022UITests/FailureDiffs/
+        name: test_logs
+        path: /Users/runner/work/avito-internship-ios-2022/avito-internship-ios-2022/build_derived_data_folder/Logs/Test/
