@@ -5,13 +5,13 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
-import Foundation
 @testable import AvitoInternship2022
+import Foundation
 
 final class MockedURLOpener: URLOpener {
     var openUrlCalls = 0
 
-    func openUrl(_ url: URL?) {
+    func openUrl(_: URL?) {
         openUrlCalls += 1
     }
 }

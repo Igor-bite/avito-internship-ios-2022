@@ -63,3 +63,5 @@ fastlane/test_output
 
 build_derived_data_folder
 AvitoInternship2022UITests/FailureDiffs
+
+AvitoInternship2022.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist

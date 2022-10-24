@@ -5,8 +5,8 @@
 //  Created by Игорь Клюжев on 18.10.2022.
 //
 
-import XCTest
 @testable import AvitoInternship2022
+import XCTest
 
 final class URLCacheFacadeTests: XCTestCase {
     private enum Constants {
@@ -20,7 +20,7 @@ final class URLCacheFacadeTests: XCTestCase {
                                           expectedContentLength: 0, textEncodingName: nil)
 
     override func setUp() {
-        sut = URLCacheFacade(memoryCapacity: 1_024 * 1_024, diskCapacity: 1_024 * 1_024, diskPath: "diskPath")
+        sut = URLCacheFacade(memoryCapacity: 1024 * 1024, diskCapacity: 1024 * 1024, diskPath: "diskPath")
         data = String("Hello world").data(using: .utf8)!
     }
 

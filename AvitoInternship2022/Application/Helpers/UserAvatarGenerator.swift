@@ -13,8 +13,8 @@ final class UserAvatarGenerator {
             static let fontSizePart: CGFloat = 2 / 3
             static let font = FontFamily.Lato.semiBold
         }
-
     }
+
     static func generateUserImage(userName: String, withSize size: CGSize) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: size)
 

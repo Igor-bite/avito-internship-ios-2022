@@ -12,20 +12,47 @@ desc "Build for testing"
     )
   end
 
-desc "Run tests"
-  lane :run_tests_from_build do
+desc "Run Unit tests"
+  lane :run_unit_tests_from_build do
     run_tests(
       derived_data_path: "build_derived_data_folder",
       test_without_building: true,
       device: "iPhone 8 Plus",
+      only_testing: ["AvitoInternship2022Tests"],
       prelaunch_simulator: true
     )
   end
 
-desc "Build and test"
-  lane :build_and_test do
+desc "Run UI tests"
+  lane :run_ui_tests_from_build do
+    run_tests(
+      derived_data_path: "build_derived_data_folder",
+      test_without_building: true,
+      device: "iPhone 8 Plus",
+      only_testing: ["AvitoInternship2022UITests"],
+      prelaunch_simulator: true
+    )
+  end
+
+desc "Build and test Unit + UI"
+  lane :build_and_test_unit_ui do
     build_for_testing
-    run_tests_from_build
+    run_unit_tests_from_build
+    run_ui_tests_from_build
+    slack(message: "✅ App was successfully built and tested") 
+  end
+
+desc "Build and test Unit"
+  lane :build_and_test_unit do
+    build_for_testing
+    run_unit_tests_from_build
+    slack(message: "✅ App was successfully built and tested") 
+  end
+
+desc "Build and test UI"
+  lane :build_and_test_ui do
+    build_for_testing
+    run_ui_tests_from_build
     slack(message: "✅ App was successfully built and tested") 
   end
 

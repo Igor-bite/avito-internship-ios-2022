@@ -5,8 +5,8 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
-import Foundation
 @testable import AvitoInternship2022
+import Foundation
 
 final class MockedEmployeesScreenView: EmployeesScreenViewInterface {
     var reloadDataCalls = 0

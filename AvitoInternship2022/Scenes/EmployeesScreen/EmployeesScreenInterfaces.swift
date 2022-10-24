@@ -5,9 +5,11 @@
 //  Created by Игорь Клюжев on 18.10.2022.
 //
 
-import Foundation
+import UIKit
 
-protocol EmployeesScreenWireframeInterface: WireframeInterface {}
+protocol EmployeesScreenAssemblyInterface {
+    func build() -> UIViewController
+}
 
 protocol EmployeesScreenViewInterface: ViewInterface {
     func reloadData()

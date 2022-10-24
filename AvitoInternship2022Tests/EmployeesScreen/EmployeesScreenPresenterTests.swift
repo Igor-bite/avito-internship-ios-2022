@@ -5,8 +5,8 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
-import XCTest
 @testable import AvitoInternship2022
+import XCTest
 
 final class EmployeesScreenPresenterTests: XCTestCase {
     private var sut: EmployeesScreenPresenter!
@@ -20,7 +20,7 @@ final class EmployeesScreenPresenterTests: XCTestCase {
         interactor = .init()
         view = .init()
         urlOpener = .init()
-        sut = .init(view: view, interactor: interactor, wireframe: EmployeesScreenWireframe(), networkMonitor: networkMonitor, urlOpener: urlOpener)
+        sut = .init(view: view, interactor: interactor, networkMonitor: networkMonitor, urlOpener: urlOpener)
     }
 
     override func tearDown() {

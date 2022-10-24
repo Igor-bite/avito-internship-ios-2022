@@ -8,7 +8,8 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func request(_ request: URLRequest, completion: @escaping (Result<(data: Data?, response: URLResponse?), Error>) -> Void)
+    typealias NetworkRequestResult = Result<(data: Data?, response: URLResponse?), Error>
+    func request(_ request: URLRequest, completion: @escaping (NetworkRequestResult) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -18,7 +19,7 @@ final class NetworkService: NetworkServiceProtocol {
 
     private init() {}
 
-    func request(_ request: URLRequest, completion: @escaping (Result<(data: Data?, response: URLResponse?), Error>) -> Void) {
+    func request(_ request: URLRequest, completion: @escaping (NetworkRequestResult) -> Void) {
         urlSession.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
