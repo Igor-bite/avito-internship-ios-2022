@@ -34,10 +34,7 @@ final class URLCacheFacade: URLCacheFacadeProtocol {
     }
 
     func data(forRequest request: URLRequest) -> Data? {
-        if let expiryDate = expiryDate(forRequest: request) {
-            if Date() < expiryDate {
-                return cacheData(forRequest: request)
-            }
+        if isDataExpired(forRequest: request) {
             return nil
         }
         return cacheData(forRequest: request)
@@ -46,18 +43,31 @@ final class URLCacheFacade: URLCacheFacadeProtocol {
     private func cacheData(forRequest request: URLRequest) -> Data? {
         cache.cachedResponse(for: request)?.data
     }
+}
 
 // MARK: - Cache values expiry handling
 
-    private func expiryDateDefaultsKey(forRequest request: URLRequest) -> String {
+private extension URLCacheFacade {
+    func isDataExpired(forRequest request: URLRequest) -> Bool {
+        if let expiryDate = expiryDate(forRequest: request) {
+            if Date() < expiryDate {
+                return false
+            }
+            removeData(forRequest: request)
+            return true
+        }
+        return false
+    }
+
+    func expiryDateDefaultsKey(forRequest request: URLRequest) -> String {
         "\(request.hashValue)\(Constants.keyPostfix)"
     }
 
-    private func expiryDate(forRequest request: URLRequest) -> Date? {
+    func expiryDate(forRequest request: URLRequest) -> Date? {
         UserDefaults.standard.value(forKey: expiryDateDefaultsKey(forRequest: request)) as? Date
     }
 
-    private func saveExpiryDate(_ expiryDate: Date?, forRequest request: URLRequest) {
+    func saveExpiryDate(_ expiryDate: Date?, forRequest request: URLRequest) {
         UserDefaults.standard.set(expiryDate, forKey: expiryDateDefaultsKey(forRequest: request))
     }
 }
