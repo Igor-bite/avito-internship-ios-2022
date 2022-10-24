@@ -1,0 +1,6 @@
+framework module Pods_AvitoInternship2022Tests {
+  umbrella header "Pods-AvitoInternship2022Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
