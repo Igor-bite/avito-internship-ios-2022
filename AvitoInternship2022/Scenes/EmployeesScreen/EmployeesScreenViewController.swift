@@ -60,6 +60,7 @@ final class EmployeesScreenViewController: UIViewController {
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.refreshControl?.beginRefreshing()
+        collectionView.backgroundColor = .Pallette.ElementColors.mainBgColor
 
         return collectionView
     }()

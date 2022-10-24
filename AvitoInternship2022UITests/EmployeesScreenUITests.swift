@@ -47,25 +47,35 @@ extension UIImage {
 
         var yOffset: CGFloat = 0
 
-        switch UIDevice.current.model {
-        case "Simulator iPhone 11 Pro",
-            "Simulator iPhone XS Max",
-            "Simulator iPhone X",
-            "Simulator iPhone 12 Pro",
-            "Simulator iPhone 12 Pro Max",
-            "Simulator iPhone XS":
-            yOffset = 132
-        case "Simulator iPhone XR",
-            "Simulator iPhone 12",
-            "Simulator iPhone 11":
-            yOffset = 88
-        case "Simulator iPhone 6 Plus",
-            "Simulator iPhone 6S Plus",
-            "Simulator iPhone 7 Plus",
-            "Simulator iPhone 8 Plus":
-            yOffset = 54
-        default:
-            yOffset = 40
+        let name = UIDevice.current.name
+
+        if let ind = name.firstIndex(of: "i") {
+            let model = name[ind..<name.endIndex]
+            switch model {
+            case "iPhone 11 Pro",
+                "iPhone XS Max",
+                "iPhone X",
+                "iPhone 12 Pro",
+                "iPhone 12 Pro Max",
+                "iPhone 13 Pro Max",
+                "iPhone 14 Pro Max",
+                "iPhone 14 Plus",
+                "iPhone XS":
+                yOffset = 132
+            case "iPhone XR",
+                "iPhone 14",
+                "iPhone 13",
+                "iPhone 12",
+                "iPhone 11":
+                yOffset = 88
+            case "iPhone 6 Plus",
+                "iPhone 6S Plus",
+                "iPhone 7 Plus",
+                "iPhone 8 Plus":
+                yOffset = 54
+            default:
+                yOffset = 40
+            }
         }
 
         let rect = CGRect(
