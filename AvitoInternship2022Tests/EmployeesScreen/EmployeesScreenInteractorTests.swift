@@ -5,15 +5,15 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
-import XCTest
 @testable import AvitoInternship2022
+import XCTest
 
 final class EmployeesScreenInteractorTests: XCTestCase {
     private var companyService: MockedCompanyService!
     private var sut: EmployeesScreenInteractor!
     private let company = Company(name: "name",
                                   employees: [
-                                    .init(name: "name", phoneNumber: "number", skills: ["skill"])
+                                      .init(name: "name", phoneNumber: "number", skills: ["skill"])
                                   ])
     private let error = ServiceError.missingData
 

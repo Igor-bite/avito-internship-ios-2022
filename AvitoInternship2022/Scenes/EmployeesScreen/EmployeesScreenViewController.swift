@@ -157,6 +157,7 @@ extension EmployeesScreenViewController: EmployeesScreenViewInterface {
 }
 
 // MARK: Making constraints methods
+
 private extension EmployeesScreenViewController {
     func titleLabelConstraints() -> [NSLayoutConstraint] {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -205,6 +206,7 @@ private extension EmployeesScreenViewController {
 }
 
 // MARK: Collection view reladted methods
+
 private extension EmployeesScreenViewController {
     func createDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
@@ -228,7 +230,7 @@ private extension EmployeesScreenViewController {
     func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         guard
             let sectionHeader: EmployeesSectionHeaderView =
-                collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath)
+            collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath)
         else {
             return nil
         }
@@ -255,12 +257,12 @@ private extension EmployeesScreenViewController {
         return NSCollectionLayoutItem(layoutSize: itemSize)
     }
 
-    func createGroup(withWidth width: CGFloat, item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup{
+    func createGroup(withWidth width: CGFloat, item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(50)
         )
-        let columns = self.collectionViewColumnCount(for: width)
+        let columns = collectionViewColumnCount(for: width)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
         group.interItemSpacing = .fixed(Constants.interItemSpacing)
         return group
@@ -280,12 +282,12 @@ private extension EmployeesScreenViewController {
         return sectionHeader
     }
 
-    func createSection(withGroup group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection{
+    func createSection(withGroup group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: Constants.offset,
                                                         bottom: Constants.offset, trailing: Constants.offset)
         section.interGroupSpacing = Constants.interGroupSpacing
-        section.boundarySupplementaryItems = [self.createHeader()]
+        section.boundarySupplementaryItems = [createHeader()]
         return section
     }
 

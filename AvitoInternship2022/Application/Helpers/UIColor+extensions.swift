@@ -49,7 +49,7 @@ extension UIColor {
         var hash = 0
         let colorConstant = 131
         let maxSafeValue = Int.max / colorConstant
-        for char in text.unicodeScalars{
+        for char in text.unicodeScalars {
             if hash > maxSafeValue {
                 hash /= colorConstant
             }

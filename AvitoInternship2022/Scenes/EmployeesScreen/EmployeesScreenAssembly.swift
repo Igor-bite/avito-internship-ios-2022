@@ -8,7 +8,6 @@
 import UIKit
 
 final class EmployeesScreenAssembly {
-
     // MARK: - Module setup -
 
     func build() -> UIViewController {

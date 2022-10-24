@@ -114,9 +114,9 @@ final class EmployeeCell: UICollectionViewCell, Reusable {
         contentView.addSubview(skillsListView)
 
         let constraints = constraintsForContentView() +
-        constraintsForImageView() + constraintsForNameLabel() +
-        constraintsForPhoneImageView() + constraintsForPhoneNumberLabel() +
-        constraintsForSkillsCollection()
+            constraintsForImageView() + constraintsForNameLabel() +
+            constraintsForPhoneImageView() + constraintsForPhoneNumberLabel() +
+            constraintsForSkillsCollection()
 
         NSLayoutConstraint.activate(constraints)
     }

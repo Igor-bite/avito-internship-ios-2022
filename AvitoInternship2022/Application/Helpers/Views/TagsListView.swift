@@ -8,14 +8,14 @@
 import UIKit
 
 class TagsListView: UIView {
-
-// MARK: - Public properties
+    // MARK: - Public properties
 
     var tagNames: [String] = [] {
         didSet {
             addTagLabels()
         }
     }
+
     var tagHeight: CGFloat = 30
     var tagPadding: CGFloat = 16
     var tagSpacingX: CGFloat = 8
@@ -24,11 +24,11 @@ class TagsListView: UIView {
     var tagBackgroundColor: UIColor = .Pallette.blueColor
     var cornerRadius: CGFloat = 12
 
-// MARK: - Private properties
+    // MARK: - Private properties
 
     private var tagLabels = [UILabel]()
 
-// MARK: - Public functions
+    // MARK: - Public functions
 
     func preferredHeight(forWidth width: CGFloat) -> CGFloat {
         var currentOriginX: CGFloat = 0
@@ -47,7 +47,7 @@ class TagsListView: UIView {
         return currentOriginY + tagHeight
     }
 
-// MARK: - Private functions
+    // MARK: - Private functions
 
     private func addTagLabels() {
         removeTags()

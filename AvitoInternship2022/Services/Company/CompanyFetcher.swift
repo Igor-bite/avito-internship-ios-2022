@@ -12,8 +12,8 @@ final class CompanyFetcher: CompanyService {
 
     private enum Constants {
         static let diskPath = "companyFetcherCache"
-        static let allowedMemorySize = 10 * 1_024 * 1_024 // 10 Mb
-        static let allowedDiskSize = 10 * 1_024 * 1_024   // 10 Mb
+        static let allowedMemorySize = 10 * 1024 * 1024 // 10 Mb
+        static let allowedDiskSize = 10 * 1024 * 1024 // 10 Mb
         static let cacheStorageTimeInterval: Double = 60 * 60 // 1 hour
     }
 
@@ -30,7 +30,8 @@ final class CompanyFetcher: CompanyService {
     // MARK: - Public functions
 
     init(networkService: NetworkServiceProtocol,
-         cache: URLCacheFacadeProtocol?) {
+         cache: URLCacheFacadeProtocol?)
+    {
         self.networkService = networkService
         self.cache = cache
     }
@@ -62,7 +63,8 @@ final class CompanyFetcher: CompanyService {
     }
 
     private func startRequest(_ request: URLRequest,
-                              completion: @escaping (Result<Company, Error>) -> Void) {
+                              completion: @escaping (Result<Company, Error>) -> Void)
+    {
         networkService.request(request) { result in
             switch result {
             case .success(let (data, response)):

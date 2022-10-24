@@ -80,7 +80,7 @@ extension EmployeesScreenPresenter: EmployeesScreenPresenterInterface {
     }
 
     func fetchData(forceRefresh: Bool) {
-        if !networkMonitor.isConnected && company != nil {
+        if !networkMonitor.isConnected, company != nil {
             showAlert(withTitle: "No Internet connection", message: "Please check your connection and try again") {
                 self.view?.updateLoadingIndicator(isLoading: false)
             }

@@ -5,15 +5,15 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
+@testable import AvitoInternship2022
 import Foundation
 import XCTest
-@testable import AvitoInternship2022
 
 final class MockedCompanyService: CompanyService {
     var getCompanyCalls = 0
     var result: Result<Company, Error>?
 
-    func getCompany(forceRefresh: Bool, completion: @escaping (Result<Company, Error>) -> Void) {
+    func getCompany(forceRefresh _: Bool, completion: @escaping (Result<Company, Error>) -> Void) {
         getCompanyCalls += 1
 
         if let result = result {

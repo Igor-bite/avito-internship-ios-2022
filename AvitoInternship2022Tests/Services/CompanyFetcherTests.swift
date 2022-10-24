@@ -5,8 +5,8 @@
 //  Created by Игорь Клюжев on 23.10.2022.
 //
 
-import XCTest
 @testable import AvitoInternship2022
+import XCTest
 
 final class CompanyFetcherTests: XCTestCase {
     private enum Constants {
@@ -18,7 +18,7 @@ final class CompanyFetcherTests: XCTestCase {
     private var cache: MockedURLCacheFacade!
     private var urlRequest = URLRequest(url: Constants.url)
     private var urlResponse = URLResponse(url: Constants.url, mimeType: nil,
-                                         expectedContentLength: 0, textEncodingName: nil)
+                                          expectedContentLength: 0, textEncodingName: nil)
 
     private let company = Company(name: "Name",
                                   employees: [.init(name: "name", phoneNumber: "12345", skills: ["Skill"])])

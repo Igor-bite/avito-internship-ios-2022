@@ -8,7 +8,6 @@
 import XCTest
 
 final class AvitoInternship2022UITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
